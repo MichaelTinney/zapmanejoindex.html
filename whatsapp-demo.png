@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Conversation - Fazenda Cabral</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: #111b21;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .phone-container {
+            width: 375px;
+            height: 812px;
+            background: #000;
+            border-radius: 40px;
+            padding: 10px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+        
+        .screen {
+            width: 100%;
+            height: 100%;
+            background: #111b21;
+            border-radius: 30px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .chat-header {
+            background: #2a2f32;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #3b4a54;
+        }
+        
+        .back-arrow {
+            color: #8696a0;
+            margin-right: 15px;
+            font-size: 20px;
+        }
+        
+        .group-avatar {
+            width: 40px;
+            height: 40px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-weight: bold;
+            color: white;
+            font-size: 14px;
+        }
+        
+        .group-info h3 {
+            color: #e9edef;
+            font-size: 16px;
+            margin: 0;
+            font-weight: 500;
+        }
+        
+        .group-info p {
+            color: #8696a0;
+            font-size: 13px;
+            margin: 0;
+        }
+        
+        .chat-area {
+            flex: 1;
+            background: #0b141a;
+            padding: 20px 15px;
+            overflow-y: auto;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(37, 211, 102, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(37, 211, 102, 0.05) 0%, transparent 50%);
+        }
+        
+        .message {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .message-bubble {
+            max-width: 80%;
+            padding: 8px 12px;
+            border-radius: 7.5px;
+            position: relative;
+            word-wrap: break-word;
+        }
+        
+        .message-incoming {
+            align-self: flex-start;
+            background: #202c33;
+            color: #e9edef;
+        }
+        
+        .message-incoming::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 8px 13px 0;
+            border-color: transparent #202c33 transparent transparent;
+        }
+        
+        .message-outgoing {
+            align-self: flex-end;
+            background: #005c4b;
+            color: #e9edef;
+        }
+        
+        .message-outgoing::before {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 0 13px 8px;
+            border-color: transparent transparent transparent #005c4b;
+        }
+        
+        .message-bot {
+            align-self: flex-end;
+            background: #25D366;
+            color: white;
+            font-weight: 500;
+        }
+        
+        .message-bot::before {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 0 13px 8px;
+            border-color: transparent transparent transparent #25D366;
+        }
+        
+        .message-sender {
+            font-weight: 600;
+            color: #25D366;
+            font-size: 13px;
+            margin-bottom: 2px;
+        }
+        
+        .message-time {
+            font-size: 11px;
+            color: #8696a0;
+            margin-top: 4px;
+            text-align: right;
+            align-self: flex-end;
+        }
+        
+        .input-area {
+            background: #2a2f32;
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .input-container {
+            flex: 1;
+            background: #40484d;
+            border-radius: 21px;
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+        }
+        
+        .input-field {
+            flex: 1;
+            background: none;
+            border: none;
+            color: #e9edef;
+            font-size: 15px;
+            outline: none;
+        }
+        
+        .input-field::placeholder {
+            color: #8696a0;
+        }
+        
+        .emoji-btn, .attachment-btn, .send-btn {
+            background: none;
+            border: none;
+            color: #8696a0;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 5px;
+        }
+        
+        .send-btn {
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .emoji-btn {
+            margin-right: 10px;
+        }
+        
+        .attachment-btn {
+            margin-left: 10px;
+        }
+        
+        .status-indicator {
+            font-size: 12px;
+            color: #53bdeb;
+            margin-top: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="phone-container">
+        <div class="screen">
+            <div class="chat-header">
+                <span class="back-arrow">←</span>
+                <div class="group-avatar">FC</div>
+                <div class="group-info">
+                    <h3>Fazenda Cabral</h3>
+                    <p>Ronaldinho, Cafu, Cabral</p>
+                </div>
+            </div>
+            
+            <div class="chat-area">
+                <div class="message">
+                    <div class="message-bubble message-incoming">
+                        <div class="message-sender">Ronaldinho</div>
+                        <div>5919 F nelore 30/07</div>
+                    </div>
+                    <div class="message-time">8:15 AM</div>
+                </div>
+                
+                <div class="message">
+                    <div class="message-bubble message-bot">
+                        <div>✅ Nascimento registrado!</div>
+                        <div>Bezerro fêmea nelore, brinco 5919</div>
+                        <div>Registrado por Ronaldinho</div>
+                    </div>
+                    <div class="message-time">8:15 AM</div>
+                </div>
+                
+                <div class="message">
+                    <div class="message-bubble message-incoming">
+                        <div class="message-sender">Cafu</div>
+                        <div>Chuva hoje 25mm</div>
+                    </div>
+                    <div class="message-time">8:17 AM</div>
+                </div>
+                
+                <div class="message">
+                    <div class="message-bubble message-bot">
+                        <div>🌧️ Dados climáticos registrados!</div>
+                        <div>25mm de chuva - 01/08/2025</div>
+                        <div>Registrado por Cafu</div>
+                    </div>
+                    <div class="message-time">8:17 AM</div>
+                </div>
+                
+                <div class="message">
+                    <div class="message-bubble message-outgoing">
+                        <div>Obrigado! 👍</div>
+                    </div>
+                    <div class="message-time">8:18 AM ✓✓</div>
+                </div>
+            </div>
+            
+            <div class="input-area">
+                <button class="emoji-btn">😊</button>
+                <div class="input-container">
+                    <input type="text" class="input-field" placeholder="Mensagem">
+                    <button class="attachment-btn">📎</button>
+                </div>
+                <button class="send-btn">➤</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
