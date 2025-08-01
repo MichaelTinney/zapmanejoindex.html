@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZapManejo - Gestão de Rebanho via WhatsApp</title>
+    <meta name="description" content="Gerencie seu rebanho bovino, suíno, equino e aves através do WhatsApp. Dashboard em tempo real para pecuaristas brasileiros. R$250/mês.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: #2d5016;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #25D366;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #25D366;
+        }
+        
+        .cta-button {
+            background: #25D366;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        
+        .cta-button:hover {
+            background: #20b358;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c23 100%);
+            color: white;
+            padding: 8rem 0 4rem;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .whatsapp-demo {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 3rem auto;
+            max-width: 500px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .chat-message {
+            background: #25D366;
+            color: white;
+            padding: 1rem;
+            border-radius: 18px;
+            margin-bottom: 1rem;
+            text-align: left;
+            position: relative;
+        }
+        
+        .chat-message::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: -10px;
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            border-top-color: #25D366;
+            border-bottom: 0;
+            margin-bottom: -10px;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2d5016;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: #25D366;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            color: #2d5016;
+            margin-bottom: 1rem;
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            padding: 4rem 0;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .step {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .step-number {
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+        
+        /* Story Section */
+        .story {
+            background: #2d5016;
+            color: white;
+            padding: 4rem 0;
+        }
+        
+        .story-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .story h2 {
+            color: #25D366;
+            margin-bottom: 2rem;
+        }
+        
+        .story p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+        
+        /* Pricing */
+        .pricing {
+            padding: 4rem 0;
+            background: #f8f9fa;
+            text-align: center;
+        }
+        
+        .pricing-card {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            max-width: 400px;
+            margin: 2rem auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(45deg, #25D366, #20b358);
+        }
+        
+        .price {
+            font-size: 3rem;
+            color: #2d5016;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .price-period {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .pricing-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .pricing-features i {
+            color: #25D366;
+            margin-right: 0.5rem;
+        }
+        
+        /* Contact */
+        .contact {
+            padding: 4rem 0;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .contact-icon {
+            font-size: 2.5rem;
+            color: #25D366;
+            margin-bottom: 1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2d5016;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .steps {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">ZapManejo</div>
+            <ul class="nav-links">
+                <li><a href="#features">Funcionalidades</a></li>
+                <li><a href="#how-it-works">Como Funciona</a></li>
+                <li><a href="#story">Nossa História</a></li>
+                <li><a href="#pricing">Preços</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+            <a href="#contact" class="cta-button">Começar Agora</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Gerencie Seu Rebanho pelo WhatsApp</h1>
+            <p>A única plataforma de gestão pecuária que funciona através do WhatsApp. Criada por pecuaristas brasileiros, para pecuaristas brasileiros.</p>
+            
+            <div class="whatsapp-demo">
+                <div class="chat-message">
+                    "Brinco 1234, bezerro macho, nelore, pasto norte"
+                </div>
+                <p style="margin-top: 1rem; opacity: 0.8;">
+                    <i class="fas fa-magic" style="margin-right: 0.5rem;"></i>
+                    Nascimento registrado automaticamente no dashboard
+                </p>
+            </div>
+            
+            <a href="#contact" class="cta-button" style="font-size: 1.2rem; padding: 1rem 2rem;">
+                Experimentar Grátis
+            </a>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Funcionalidades Completas</h2>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h3>Registro de Nascimentos</h3>
+                    <p>Registre nascimentos via WhatsApp: brinco da vaca, sexo do bezerro, raça e pasto. Dados compilados instantaneamente.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-weight"></i>
+                    </div>
+                    <h3>Controle de Peso</h3>
+                    <p>Monitore o peso dos animais e acompanhe o ganho de peso através de gráficos e relatórios detalhados.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <h3>Movimentação do Rebanho</h3>
+                    <p>Controle a movimentação interna do rebanho entre pastos com atualizações em tempo real.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-cloud-rain"></i>
+                    </div>
+                    <h3>Dados Climáticos</h3>
+                    <p>Registre chuva (mm), temperatura e condições climáticas para análise completa da propriedade.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Dashboard em Tempo Real</h3>
+                    <p>Todos os dados coletados ficam imediatamente disponíveis com gráficos, tabelas e relatórios personalizados.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Cotação da Arroba</h3>
+                    <p>RSS ao vivo do mercado de São Paulo com preços atualizados constantemente para tomada de decisões.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">Como Funciona</h2>
+            <div class="steps">
+                <div class="step fade-in">
+                    <div class="step-number">1</div>
+                    <h3>Envie uma Mensagem</h3>
+                    <p>Seus vaqueiros enviam informações via WhatsApp usando linguagem natural, sem precisar aprender novos sistemas.</p>
+                </div>
+                
+                <div class="step fade-in">
+                    <div class="step-number">2</div>
+                    <h3>Dados Processados</h3>
+                    <p>Nossa IA processa automaticamente as mensagens e organiza todas as informações no dashboard.</p>
+                </div>
+                
+                <div class="step fade-in">
+                    <div class="step-number">3</div>
+                    <h3>Relatórios Instantâneos</h3>
+                    <p>Acesse relatórios, gráficos e planilhas em tempo real. Exporte dados ou visualize no dashboard.</p>
+                </div>
+                
+                <div class="step fade-in">
+                    <div class="step-number">4</div>
+                    <h3>Tome Decisões</h3>
+                    <p>Use os dados para otimizar sua operação, acompanhar mercado e maximizar resultados da propriedade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="story" class="story">
+        <div class="container">
+            <div class="story-content">
+                <h2>Nossa História</h2>
+               <p>Há 20 anos, quando cheguei ao Brasil, uma coisa me impressionou profundamente: a incrível capacidade de adaptação dos marajoaras. Quando nosso gerente da outra fazenda e meu sogro começaram a ensinar novos sistemas de identificação por brincos e métodos diferentes de trabalhar com o gado, os vaqueiros não apenas aprenderam rapidamente, mas dominaram essas técnicas e termos técnicos com uma naturalidade impressionante.</p>
+            
+            <p>Conforme os celulares se tornaram parte da vida cotidiana, foi fascinante ver como os vaqueiros da Ilha do Marajó se adaptaram à nova forma de comunicação. Assim como aconteceu com pessoas no mundo inteiro, eles abraçaram o WhatsApp como ferramenta natural de trabalho e vida.</p>
+            
+            <p>Durante duas décadas, continuamos usando o método tradicional: chegar ao curral com prancheta e planilhas impressas para coletar dados durante vacinações e inseminações. Mas a tecnologia evoluiu de forma impressionante - hoje, com reconhecimento de escrita manual, você pode simplesmente fotografar suas anotações manuscritas, verificar se a conversão para texto digital ficou correta, e enviar direto para o ZapManejo compilar automaticamente.</p>
+            
+            <p>Em março de 2025, conversando com meu filho via WhatsApp enquanto ele estava na fazenda, tive uma revelação: se os vaqueiros se adaptaram tão bem a todas essas mudanças tecnológicas, por que não criar uma ferramenta que aproveite essa habilidade natural de comunicação pelo WhatsApp para a gestão do rebanho?</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title">Preço Simples e Justo</h2>
+            <div class="pricing-card">
+                <div class="price">R$ 250</div>
+                <div class="price-period">por mês</div>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check"></i> WhatsApp Integration Completa</li>
+                    <li><i class="fas fa-check"></i> Dashboard em Tempo Real</li>
+                    <li><i class="fas fa-check"></i> Relatórios e Gráficos Ilimitados</li>
+                    <li><i class="fas fa-check"></i> Cotação da Arroba Ao Vivo</li>
+                    <li><i class="fas fa-check"></i> Bovinos, Suínos, Aves, Equinos</li>
+                    <li><i class="fas fa-check"></i> Suporte Técnico Completo</li>
+                    <li><i class="fas fa-check"></i> Integrações Personalizadas</li>
+                </ul>
+                <a href="#contact" class="cta-button" style="display: inline-block; margin-top: 1rem;">
+                    Começar Agora
+                </a>
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
+                    Outros planos disponíveis em 6 meses
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p><a href="mailto:info@zapmanejo.com" style="color: #25D366; text-decoration: none;">info@zapmanejo.com</a></p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Suporte</h3>
+                    <p>Suporte técnico completo e treinamento personalizado para sua equipe.</p>
+                    <p style="margin-top: 1rem; font-style: italic; color: #666;">Detalhes em breve</p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Onboarding</h3>
+                    <p>Implementação rápida e treinamento completo para você e sua equipe.</p>
+                    <p style="margin-top: 1rem; font-style: italic; color: #666;">Processo personalizado</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ZapManejo. Gestão de rebanho inteligente para pecuaristas brasileiros.</p>
+            <p style="margin-top: 0.5rem; opacity: 0.8;">Disponível em todo o Brasil. Outros países a partir do 2º trimestre de 2026.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.6s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Mobile menu toggle (basic implementation)
+        const navLinks = document.querySelector('.nav-links');
+        const header = document.querySelector('header');
+        
+        // Add mobile menu button if needed
+        if (window.innerWidth <= 768) {
+            const menuButton = document.createElement('button');
+            menuButton.innerHTML = '<i class="fas fa-bars"></i>';
+            menuButton.style.cssText = 'background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer;';
+            menuButton.addEventListener('click', () => {
+                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '100%';
+                navLinks.style.left = '0';
+                navLinks.style.right = '0';
+                navLinks.style.background = '#2d5016';
+                navLinks.style.padding = '1rem';
+            });
+            
+            document.querySelector('nav').appendChild(menuButton);
+        }
+    </script>
+</body>
+</html>
