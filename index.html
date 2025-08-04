@@ -589,14 +589,14 @@
         }
 
         .pointer-arrow {
-            position: absolute;
-            right: -60px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #ff6b35;
-            font-size: 40px;
-            animation: pointBounce 2s ease-in-out infinite;
-        }
+    position: absolute;
+    right: -30px;  /* Changed from -60px to -30px */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ff6b35;
+    font-size: 30px;  /* Made smaller */
+    animation: pointBounce 2s ease-in-out infinite;
+}
 
         @keyframes pointBounce {
             0%, 100% { transform: translateY(-50%) translateX(0); }
@@ -604,19 +604,19 @@
         }
 
         .pointer-text {
-            position: absolute;
-            right: -200px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: #ff6b35;
-            color: white;
-            padding: 12px 20px;
-            border-radius: 10px;
-            font-weight: bold;
-            font-size: 14px;
-            white-space: nowrap;
-            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
-        }
+    position: absolute;
+    right: -120px;  /* Changed from -200px to -120px */
+    top: 50%;
+    transform: translateY(-50%);
+    background: #ff6b35;
+    color: white;
+    padding: 8px 12px;  /* Made smaller */
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 12px;  /* Made smaller */
+    white-space: nowrap;
+    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+}
 
         .pointer-text::before {
             content: '';
