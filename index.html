@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZapManejo - Gestão de Rebanho via WhatsApp | Integra com Seus Sistemas Existentes</title>
-    <meta name="description" content="ZapManejo integra com seus sistemas existentes. Gerencie rebanho pelo WhatsApp sem abandonar seu ERP atual. Demonstração gratuita disponível.">
+    <title>ZapManejo - Gestão de Rebanho via WhatsApp</title>
+    <meta name="description" content="ZapManejo integra com seus sistemas existentes. Gerencie rebanho pelo WhatsApp sem abandonar seu ERP atual.">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
@@ -25,7 +25,6 @@
             padding: 0 20px;
         }
         
-        /* Header */
         header {
             background: #2d5016;
             color: white;
@@ -76,6 +75,7 @@
             border: none;
             cursor: pointer;
             font-size: 1rem;
+            display: inline-block;
         }
         
         .cta-button:hover {
@@ -93,7 +93,6 @@
             color: white;
         }
         
-        /* Hero Section - UPDATED */
         .hero {
             background: linear-gradient(rgba(45, 80, 22, 0.7), rgba(45, 80, 22, 0.7)), url('https://raw.githubusercontent.com/MichaelTinney/zapmanejoindex.html/main/Sunset.jpg');
             background-size: cover;
@@ -177,10 +176,16 @@
             margin-bottom: -10px;
         }
 
-        /* Positioning Section */
         .positioning {
             padding: 4rem 0;
             background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2d5016;
         }
 
         .positioning-grid {
@@ -208,7 +213,6 @@
             transform: scale(1.02);
         }
 
-        /* Demo Video Section */
         .demo-video {
             padding: 4rem 0;
             text-align: center;
@@ -229,17 +233,9 @@
             color: #25D366;
         }
         
-        /* Features Section */
         .features {
             padding: 4rem 0;
             background: white;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #2d5016;
         }
         
         .features-grid {
@@ -271,7 +267,6 @@
             margin-bottom: 1rem;
         }
 
-        /* Social Proof */
         .social-proof {
             padding: 4rem 0;
             background: #f8f9fa;
@@ -285,22 +280,15 @@
             margin-top: 2rem;
         }
 
-        .testimonial {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
         .testimonial-placeholder {
             font-style: italic;
             color: #666;
             padding: 2rem;
             border: 2px dashed #ddd;
             border-radius: 10px;
+            background: white;
         }
 
-        /* FAQ Section */
         .faq {
             padding: 4rem 0;
             background: white;
@@ -341,7 +329,6 @@
             display: block;
         }
 
-        /* Lead Capture Form */
         .lead-capture {
             padding: 4rem 0;
             background: linear-gradient(135deg, #2d5016, #25D366);
@@ -395,7 +382,6 @@
             font-weight: bold;
         }
 
-        /* Footer */
         footer {
             background: #2d5016;
             color: white;
@@ -403,7 +389,10 @@
             padding: 2rem 0;
         }
         
-        /* Mobile Responsive */
+        .hidden {
+            display: none;
+        }
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -432,26 +421,6 @@
             .testimonials {
                 grid-template-columns: 1fr;
             }
-        }
-        
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .fade-in {
-            animation: fadeInUp 0.6s ease-out;
-        }
-
-        .hidden {
-            display: none;
         }
     </style>
 </head>
@@ -491,12 +460,8 @@
                 </div>
                 
                 <div class="cta-buttons">
-                    <a href="#demonstracao" class="cta-button">
-                        Ver Demonstração Gratuita
-                    </a>
-                    <a href="#roi-calculator" class="cta-button secondary">
-                        Calcular ROI
-                    </a>
+                    <a href="#demonstracao" class="cta-button">Ver Demonstração Gratuita</a>
+                    <a href="#roi-calculator" class="cta-button secondary">Calcular ROI</a>
                 </div>
             </div>
         </div>
@@ -660,16 +625,6 @@
 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>Quantas mensagens WhatsApp posso enviar?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Ilimitadas. Não há limite para o número de mensagens ou dados que você pode registrar através do ZapManejo.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
                         <span>Como fica a segurança dos dados?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
@@ -753,7 +708,6 @@
     </footer>
 
     <script>
-        // FAQ Toggle
         function toggleFAQ(element) {
             const answer = element.nextElementSibling;
             const icon = element.querySelector('i');
@@ -762,43 +716,38 @@
             icon.style.transform = answer.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
         }
 
-        // ROI Calculator
         function calculateROI() {
             const cattleCount = document.getElementById('cattle-count').value;
             const avgPrice = document.getElementById('avg-price').value;
             
             if (cattleCount && avgPrice) {
                 const totalValue = cattleCount * avgPrice;
-                const annualSoftwareCost = 14400; // R$1,200 * 12 months
-                const preventableLossPercent = 0.005; // 0.5% conservative estimate
+                const annualSoftwareCost = 14400;
+                const preventableLossPercent = 0.005;
                 const preventableLoss = totalValue * preventableLossPercent;
                 const roi = ((preventableLoss - annualSoftwareCost) / annualSoftwareCost) * 100;
                 
                 const resultElement = document.getElementById('roi-result');
                 const textElement = document.getElementById('roi-text');
                 
-                textElement.innerHTML = `
-                    <strong>Seu Rebanho:</strong> ${parseInt(cattleCount).toLocaleString()} cabeças<br>
-                    <strong>Valor Total:</strong> R$ ${totalValue.toLocaleString()}<br>
-                    <strong>Economia Estimada:</strong> R$ ${Math.round(preventableLoss).toLocaleString()}/ano<br>
-                    <strong>Custo ZapManejo:</strong> R$ 14.400/ano<br>
-                    <strong>ROI:</strong> ${Math.round(roi)}% no primeiro ano
-                `;
+                textElement.innerHTML = 
+                    '<strong>Seu Rebanho:</strong> ' + parseInt(cattleCount).toLocaleString() + ' cabeças<br>' +
+                    '<strong>Valor Total:</strong> R$ ' + totalValue.toLocaleString() + '<br>' +
+                    '<strong>Economia Estimada:</strong> R$ ' + Math.round(preventableLoss).toLocaleString() + '/ano<br>' +
+                    '<strong>Custo ZapManejo:</strong> R$ 14.400/ano<br>' +
+                    '<strong>ROI:</strong> ' + Math.round(roi) + '% no primeiro ano';
                 
                 resultElement.classList.remove('hidden');
             }
         }
 
-        // Demo Request
         function requestDemo() {
             document.getElementById('roi-calculator').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Lead Submission
         function submitLead(event) {
             event.preventDefault();
             
-            // Get form data
             const formData = {
                 name: document.getElementById('name').value,
                 whatsapp: document.getElementById('whatsapp').value,
@@ -807,16 +756,12 @@
                 timestamp: new Date().toISOString()
             };
             
-            // Here you would integrate with your CRM/email service
-            // For now, show success message
             alert('Obrigado! Entraremos em contato em até 24 horas para agendar sua demonstração personalizada.');
             
-            // Reset form
             event.target.reset();
             document.getElementById('roi-result').classList.add('hidden');
         }
 
-        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -830,13 +775,12 @@
             });
         });
 
-        // Mobile menu toggle
         if (window.innerWidth <= 768) {
             const navLinks = document.querySelector('.nav-links');
             const menuButton = document.createElement('button');
             menuButton.innerHTML = '<i class="fas fa-bars"></i>';
             menuButton.style.cssText = 'background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer;';
-            menuButton.addEventListener('click', () => {
+            menuButton.addEventListener('click', function() {
                 navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
                 navLinks.style.flexDirection = 'column';
                 navLinks.style.position = 'absolute';
@@ -847,6 +791,8 @@
                 navLinks.style.padding = '1rem';
             });
             
+            document.querySelector('nav').appendChild(menuButton);
+        }
     </script>
 </body>
 </html>
