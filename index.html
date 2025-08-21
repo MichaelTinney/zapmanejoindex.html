@@ -59,6 +59,7 @@
             display: flex;
             list-style: none;
             gap: 2rem;
+            align-items: center;
         }
         
         .nav-links a {
@@ -69,6 +70,26 @@
         
         .nav-links a:hover {
             color: #25D366;
+        }
+
+        .language-selector {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .language-selector:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .language-selector option {
+            background: #2d5016;
+            color: white;
         }
         
         .cta-button {
@@ -772,13 +793,20 @@
                 ZapManejo
             </div>
             <ul class="nav-links">
-                <li><a href="#funcionalidades">Funcionalidades</a></li>
-                <li><a href="#como-funciona">Como Funciona</a></li>
-                <li><a href="#bufalos">Búfalos</a></li>
-                <li><a href="#faq">FAQ</a></li>
+                <li>
+                    <select class="language-selector" id="languageSelector" onchange="changeLanguage()">
+                        <option value="pt">🇧🇷 Português</option>
+                        <option value="en">🇺🇸 English</option>
+                        <option value="es">🇪🇸 Español</option>
+                    </select>
+                </li>
+                <li><a href="#funcionalidades" data-i18n="nav.features">Funcionalidades</a></li>
+                <li><a href="#como-funciona" data-i18n="nav.howItWorks">Como Funciona</a></li>
+                <li><a href="#bufalos" data-i18n="nav.buffaloes">Búfalos</a></li>
+                <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
             </ul>
-            <a href="https://demo.zapmanejo.com" class="cta-button demo-btn" target="_blank">
-                🚀 Teste Grátis
+            <a href="https://oyster-app-zqs92.ondigitalocean.app/dashboard.html" class="cta-button demo-btn" target="_blank">
+                <span data-i18n="nav.freeTest">🚀 Teste Grátis</span>
             </a>
         </nav>
     </header>
@@ -786,37 +814,37 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Controle seu rebanho pelo WhatsApp sem substituir seu sistema atual</h1>
-                <p>Simples como uma mensagem, poderoso para integrar, analisar e decidir.</p>
+                <h1 data-i18n="hero.title">Controle seu rebanho pelo WhatsApp sem substituir seu sistema atual</h1>
+                <p data-i18n="hero.subtitle">Simples como uma mensagem, poderoso para integrar, analisar e decidir.</p>
                 
                 <div class="value-proposition">
-                    <h3>✅ Do campo ao dashboard: gestão completa direto do WhatsApp</h3>
+                    <h3 data-i18n="hero.valueTitle">✅ Do campo ao dashboard: gestão completa direto do WhatsApp</h3>
                     <ul>
-                        <li>Integra com seu ERP ou planilhas existentes</li>
-                        <li>Dashboards inteligentes para melhor tomada de decisão</li>
-                        <li>Dados pelo WhatsApp, análise profissional em tempo real</li>
+                        <li data-i18n="hero.value1">Integra com seu ERP ou planilhas existentes</li>
+                        <li data-i18n="hero.value2">Dashboards inteligentes para melhor tomada de decisão</li>
+                        <li data-i18n="hero.value3">Dados pelo WhatsApp, análise profissional em tempo real</li>
                     </ul>
                 </div>
 
                 <div class="animal-support">
-                    <h3>🐄🐃 Gestão Completa para Bovinos e Búfalos</h3>
+                    <h3 data-i18n="hero.animalTitle">🐄🐃 Gestão Completa para Bovinos e Búfalos</h3>
                     <div class="animal-grid">
                         <div class="animal-category">
-                            <h4>🐄 Bovinos</h4>
+                            <h4 data-i18n="hero.cattleTitle">🐄 Bovinos</h4>
                             <ul>
-                                <li>• Nelore</li>
-                                <li>• Angus</li>
-                                <li>• Brahman</li>
-                                <li>• E mais raças...</li>
+                                <li data-i18n="hero.cattle1">• Nelore</li>
+                                <li data-i18n="hero.cattle2">• Angus</li>
+                                <li data-i18n="hero.cattle3">• Brahman</li>
+                                <li data-i18n="hero.cattle4">• E mais raças...</li>
                             </ul>
                         </div>
                         <div class="animal-category">
-                            <h4>🐃 Búfalos</h4>
+                            <h4 data-i18n="hero.buffaloTitle">🐃 Búfalos</h4>
                             <ul>
-                                <li>• Murrah</li>
-                                <li>• Mediterrâneo</li>
-                                <li>• Jafarabadi</li>
-                                <li>• Carabao</li>
+                                <li data-i18n="hero.buffalo1">• Murrah</li>
+                                <li data-i18n="hero.buffalo2">• Mediterrâneo</li>
+                                <li data-i18n="hero.buffalo3">• Jafarabadi</li>
+                                <li data-i18n="hero.buffalo4">• Carabao</li>
                             </ul>
                         </div>
                     </div>
@@ -824,23 +852,23 @@
 
                 <div class="whatsapp-demo">
                     <div class="chat-message">
-                        "Brinco 1234, bezerro macho, nelore, pasto norte"
+                        <span data-i18n="demo.message1">"Brinco 1234, bezerro macho, nelore, pasto norte"</span>
                     </div>
                     <div class="chat-message buffalo">
-                        "BUF001, fêmea, murrah, 18 litros hoje"
+                        <span data-i18n="demo.message2">"BUF001, fêmea, murrah, 18 litros hoje"</span>
                     </div>
                     <p style="margin-top: 1rem; opacity: 0.9;">
                         <i class="fas fa-magic" style="margin-right: 0.5rem;"></i>
-                        Dados integrados automaticamente no seu sistema - Bovinos e Búfalos
+                        <span data-i18n="demo.autoIntegration">Dados integrados automaticamente no seu sistema - Bovinos e Búfalos</span>
                     </p>
                 </div>
                 
                 <div class="cta-buttons">
-                    <a href="https://demo.zapmanejo.com" class="cta-button demo-btn">
-                        🎯 Demonstração Interativa (36 horas grátis)
+                    <a href="https://oyster-app-zqs92.ondigitalocean.app/dashboard.html" class="cta-button demo-btn">
+                        <span data-i18n="cta.interactiveDemo">🎯 Demonstração Interativa (36 horas grátis)</span>
                     </a>
                     <a href="#roi-calculator" class="cta-button secondary">
-                        💰 Calcular ROI
+                        <span data-i18n="cta.calculateROI">💰 Calcular ROI</span>
                     </a>
                 </div>
             </div>
@@ -849,24 +877,24 @@
 
     <section class="positioning">
         <div class="container">
-            <h2 class="section-title">Como o ZapManejo Se Integra</h2>
+            <h2 class="section-title" data-i18n="positioning.title">Como o ZapManejo Se Integra</h2>
             <div class="positioning-grid">
                 <div class="positioning-card">
                     <i class="fas fa-times-circle" style="color: #dc3545; font-size: 2rem; margin-bottom: 1rem;"></i>
-                    <h3>❌ NÃO substitui seu sistema</h3>
-                    <p>Mantém seu ERP, planilhas e processos atuais funcionando normalmente.</p>
+                    <h3 data-i18n="positioning.noReplace">❌ NÃO substitui seu sistema</h3>
+                    <p data-i18n="positioning.noReplaceDesc">Mantém seu ERP, planilhas e processos atuais funcionando normalmente.</p>
                 </div>
                 
                 <div class="positioning-card highlight">
                     <i class="fas fa-check-circle" style="color: #25D366; font-size: 2rem; margin-bottom: 1rem;"></i>
-                    <h3>✅ Complementa e Melhora</h3>
-                    <p>Captura dados via WhatsApp e integra perfeitamente com tudo que você já usa.</p>
+                    <h3 data-i18n="positioning.complements">✅ Complementa e Melhora</h3>
+                    <p data-i18n="positioning.complementsDesc">Captura dados via WhatsApp e integra perfeitamente com tudo que você já usa.</p>
                 </div>
                 
                 <div class="positioning-card">
                     <i class="fas fa-plug" style="color: #25D366; font-size: 2rem; margin-bottom: 1rem;"></i>
-                    <h3>🔗 APIs e Conectores</h3>
-                    <p>Integração automática com principais sistemas de gestão pecuária do mercado.</p>
+                    <h3 data-i18n="positioning.apis">🔗 APIs e Conectores</h3>
+                    <p data-i18n="positioning.apisDesc">Integração automática com principais sistemas de gestão pecuária do mercado.</p>
                 </div>
             </div>
         </div>
@@ -874,46 +902,45 @@
 
     <section id="bufalos" class="buffalo-section">
         <div class="container">
-            <h2 class="section-title">🐃 Suporte Completo para Bubalinocultura</h2>
+            <h2 class="section-title" data-i18n="buffalo.title">🐃 Suporte Completo para Bubalinocultura</h2>
             <div class="buffalo-content">
                 <p style="font-size: 1.2rem; margin-bottom: 2rem;">
-                    ZapManejo é o <strong>primeiro sistema WhatsApp</strong> com suporte completo para búfalos no Brasil.
-                    Perfeito para fazendas em Marajó, Amazônia e produtores de mozzarella.
+                    <span data-i18n="buffalo.description">ZapManejo é o <strong>primeiro sistema WhatsApp</strong> com suporte completo para búfalos no Brasil. Perfeito para fazendas em Marajó, Amazônia e produtores de mozzarella.</span>
                 </p>
                 
                 <div class="buffalo-grid">
                     <div class="buffalo-card">
                         <div class="buffalo-icon">🐃</div>
                         <h3>Murrah</h3>
-                        <p>Alta produção leiteira<br>1.500-2.500 kg/lactação</p>
+                        <p data-i18n="buffalo.murrah">Alta produção leiteira<br>1.500-2.500 kg/lactação</p>
                     </div>
                     
                     <div class="buffalo-card">
                         <div class="buffalo-icon">🐃</div>
-                        <h3>Mediterrâneo</h3>
-                        <p>Ideal para mozzarella<br>Excelente qualidade do leite</p>
+                        <h3 data-i18n="buffalo.mediterraneanTitle">Mediterrâneo</h3>
+                        <p data-i18n="buffalo.mediterranean">Ideal para mozzarella<br>Excelente qualidade do leite</p>
                     </div>
                     
                     <div class="buffalo-card">
                         <div class="buffalo-icon">🐃</div>
                         <h3>Jafarabadi</h3>
-                        <p>Grande porte<br>Dupla aptidão</p>
+                        <p data-i18n="buffalo.jafarabadi">Grande porte<br>Dupla aptidão</p>
                     </div>
                     
                     <div class="buffalo-card">
                         <div class="buffalo-icon">🐃</div>
                         <h3>Carabao</h3>
-                        <p>Adaptado ao clima<br>Resistente e versátil</p>
+                        <p data-i18n="buffalo.carabao">Adaptado ao clima<br>Resistente e versátil</p>
                     </div>
                 </div>
 
                 <div style="margin-top: 2rem; padding: 1.5rem; background: white; border-radius: 15px;">
-                    <h3 style="color: #1976d2; margin-bottom: 1rem;">Funcionalidades Específicas para Búfalos:</h3>
+                    <h3 style="color: #1976d2; margin-bottom: 1rem;" data-i18n="buffalo.featuresTitle">Funcionalidades Específicas para Búfalos:</h3>
                     <ul style="text-align: left; max-width: 600px; margin: 0 auto; list-style: none;">
-                        <li style="margin: 0.5rem 0;">✅ Controle de produção leiteira diária</li>
-                        <li style="margin: 0.5rem 0;">✅ Rastreamento para certificação de mozzarella</li>
-                        <li style="margin: 0.5rem 0;">✅ Gestão de búfalos em áreas alagadas</li>
-                        <li style="margin: 0.5rem 0;">✅ Registro de cruzamentos Murrah x Mediterrâneo</li>
+                        <li style="margin: 0.5rem 0;" data-i18n="buffalo.feature1">✅ Controle de produção leiteira diária</li>
+                        <li style="margin: 0.5rem 0;" data-i18n="buffalo.feature2">✅ Rastreamento para certificação de mozzarella</li>
+                        <li style="margin: 0.5rem 0;" data-i18n="buffalo.feature3">✅ Gestão de búfalos em áreas alagadas</li>
+                        <li style="margin: 0.5rem 0;" data-i18n="buffalo.feature4">✅ Registro de cruzamentos Murrah x Mediterrâneo</li>
                     </ul>
                 </div>
             </div>
@@ -922,143 +949,72 @@
 
     <section id="demonstracao" class="demo-video">
         <div class="container">
-            <h2 class="section-title">Experimente Agora - 36 Horas Grátis</h2>
+            <h2 class="section-title" data-i18n="demo.title">Experimente Agora - 36 Horas Grátis</h2>
             
             <div style="text-align: center; margin: 2rem 0;">
                 <p style="font-size: 1.2rem; margin-bottom: 2rem;">
-                    Teste com seus dados reais. Sem cartão de crédito. Sem compromisso.
+                    <span data-i18n="demo.description">Teste com seus dados reais. Sem cartão de crédito. Sem compromisso.</span>
                 </p>
                 <a href="https://oyster-app-zqs92.ondigitalocean.app/dashboard.html" class="cta-button demo-btn" style="font-size: 1.5rem; padding: 1.2rem 3rem;">
-                    🚀 Iniciar Teste Gratuito Agora
+                    <span data-i18n="demo.startNow">🚀 Iniciar Teste Gratuito Agora</span>
                 </a>
                 <p style="margin-top: 1rem; opacity: 0.8;">
-                    ⏰ Configuração em 2 minutos | 📱 Use seu WhatsApp | 🐄🐃 Bovinos e Búfalos
+                    <span data-i18n="demo.features">⏰ Configuração em 2 minutos | 📱 Use seu WhatsApp | 🐄🐃 Bovinos e Búfalos</span>
                 </p>
-            </div>
-
-            <div class="demo-section" style="margin-bottom: 3rem;">
-                <div style="margin-bottom: 2rem; text-align: center;">
-                    <h3 style="color: #2d5016; margin-bottom: 1rem;">Como Funciona:</h3>
-                    <iframe src="whatsapp-demo.html" style="width: 100%; height: 750px; border: none; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); overflow: hidden;"></iframe>
-                </div>
             </div>
         </div>
     </section>
 
     <section id="funcionalidades" class="features">
         <div class="container">
-            <h2 class="section-title">Principais Funcionalidades</h2>
+            <h2 class="section-title" data-i18n="features.title">Principais Funcionalidades</h2>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-comments"></i>
                     </div>
-                    <h3>100% WhatsApp</h3>
-                    <p>Interface que todos já conhecem. Zero treinamento necessário.</p>
+                    <h3 data-i18n="features.whatsapp">100% WhatsApp</h3>
+                    <p data-i18n="features.whatsappDesc">Interface que todos já conhecem. Zero treinamento necessário.</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-sync-alt"></i>
                     </div>
-                    <h3>Integração Total</h3>
-                    <p>Conecta com ERP, Excel, sistemas contábeis e ferramentas existentes.</p>
+                    <h3 data-i18n="features.integration">Integração Total</h3>
+                    <p data-i18n="features.integrationDesc">Conecta com ERP, Excel, sistemas contábeis e ferramentas existentes.</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3>Dashboards Inteligentes</h3>
-                    <p>Análises e relatórios que facilitam decisões e clareza nos resultados.</p>
+                    <h3 data-i18n="features.dashboards">Dashboards Inteligentes</h3>
+                    <p data-i18n="features.dashboardsDesc">Análises e relatórios que facilitam decisões e clareza nos resultados.</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">
                         🐃
                     </div>
-                    <h3>Bovinos e Búfalos</h3>
-                    <p>Único sistema WhatsApp com suporte completo para bubalinocultura.</p>
+                    <h3 data-i18n="features.animals">Bovinos e Búfalos</h3>
+                    <p data-i18n="features.animalsDesc">Único sistema WhatsApp com suporte completo para bubalinocultura.</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-cloud-sun"></i>
                     </div>
-                    <h3>Dados Meteorológicos</h3>
-                    <p>Informações climáticas integradas para melhor planejamento.</p>
+                    <h3 data-i18n="features.weather">Dados Meteorológicos</h3>
+                    <p data-i18n="features.weatherDesc">Informações climáticas integradas para melhor planejamento.</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-handshake"></i>
                     </div>
-                    <h3>Suporte Local</h3>
-                    <p>Criado no Brasil, para a realidade do pecuarista brasileiro.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="weather-demo-section">
-        <div class="demo-container">
-            <div class="feature-banner">
-                <h2>🌤️ Atualizações Meteorológicas em Tempo Real</h2>
-                <p>Dados climáticos instantâneos via WhatsApp - essencial para manejo de búfalos em áreas alagadas</p>
-            </div>
-    
-            <div class="phone-container">
-                <div class="phone-screen">
-                    <div class="status-bar">
-                        <span>14:41</span>
-                        <span>📶 🔋 100%</span>
-                    </div>
-                    
-                    <div class="chat-header">
-                        <div class="avatar">🐄</div>
-                        <div class="chat-info">
-                            <h3>ZapManejo</h3>
-                            <p>Online - Gestão Pecuária</p>
-                        </div>
-                    </div>
-                    
-                    <div class="chat-content">
-                        <div class="message sent">
-                            <div class="message-bubble">
-                                tempo em Soure, Marajó
-                                <div class="timestamp">14:15 ✓✓</div>
-                            </div>
-                        </div>
-                        
-                        <div class="message received">
-                            <div class="message-bubble weather-response">
-                                <span class="weather-icon">🌧️</span>
-                                <strong>Soure, PA (Marajó)</strong><br>
-                                27°C - Chuva leve<br>
-                                Vento: 15 km/h NE<br>
-                                Umidade: 85%<br>
-                                <small>⚠️ Ideal mover búfalos para área alta</small>
-                                <div class="timestamp">14:15</div>
-                            </div>
-                        </div>
-                        
-                        <div class="message sent">
-                            <div class="message-bubble">
-                                Movi búfalos lote 3 para pasto alto
-                                <div class="timestamp">14:16 ✓✓</div>
-                            </div>
-                        </div>
-                        
-                        <div class="message received">
-                            <div class="message-bubble">
-                                ✅ Registrado: Búfalos movidos<br>
-                                🐃 Lote: 3<br>
-                                📍 Destino: Pasto alto<br>
-                                🌧️ Motivo: Prevenção alagamento
-                                <div class="timestamp">14:16</div>
-                            </div>
-                        </div>
-                    </div>
+                    <h3 data-i18n="features.support">Suporte Local</h3>
+                    <p data-i18n="features.supportDesc">Criado no Brasil, para a realidade do pecuarista brasileiro.</p>
                 </div>
             </div>
         </div>
@@ -1066,55 +1022,55 @@
 
     <section id="faq" class="faq">
         <div class="container">
-            <h2 class="section-title">Perguntas Frequentes</h2>
+            <h2 class="section-title" data-i18n="faq.title">Perguntas Frequentes</h2>
             <div class="faq-grid">
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>ZapManejo substitui meu sistema atual?</span>
+                        <span data-i18n="faq.q1">ZapManejo substitui meu sistema atual?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p><strong>Não!</strong> ZapManejo é um complemento inteligente que captura dados via WhatsApp e integra com seus sistemas existentes. Você mantém seu ERP, planilhas e processos atuais.</p>
+                        <p data-i18n="faq.a1"><strong>Não!</strong> ZapManejo é um complemento inteligente que captura dados via WhatsApp e integra com seus sistemas existentes. Você mantém seu ERP, planilhas e processos atuais.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>Funciona para búfalos também?</span>
+                        <span data-i18n="faq.q2">Funciona para búfalos também?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p><strong>Sim!</strong> Somos o primeiro sistema WhatsApp com suporte completo para bubalinocultura. Incluímos as 4 principais raças criadas no Brasil: Murrah, Mediterrâneo, Jafarabadi e Carabao. Perfeito para produtores de leite, mozzarella e criadores em Marajó.</p>
+                        <p data-i18n="faq.a2"><strong>Sim!</strong> Somos o primeiro sistema WhatsApp com suporte completo para bubalinocultura. Incluímos as 4 principais raças criadas no Brasil: Murrah, Mediterrâneo, Jafarabadi e Carabao. Perfeito para produtores de leite, mozzarella e criadores em Marajó.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>Como funciona a integração?</span>
+                        <span data-i18n="faq.q3">Como funciona a integração?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Oferecemos APIs REST, webhooks, exportação automática para Excel, conectores para os principais ERPs pecuários e integração personalizada. Os dados fluem automaticamente do WhatsApp para seus sistemas.</p>
+                        <p data-i18n="faq.a3">Oferecemos APIs REST, webhooks, exportação automática para Excel, conectores para os principais ERPs pecuários e integração personalizada. Os dados fluem automaticamente do WhatsApp para seus sistemas.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>Precisa internet o tempo todo?</span>
+                        <span data-i18n="faq.q4">Precisa internet o tempo todo?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Não. WhatsApp armazena mensagens offline e sincroniza quando volta a conexão. Perfeito para áreas rurais e regiões como a Amazônia com conectividade intermitente.</p>
+                        <p data-i18n="faq.a4">Não. WhatsApp armazena mensagens offline e sincroniza quando volta a conexão. Perfeito para áreas rurais e regiões como a Amazônia com conectividade intermitente.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>Quanto tempo leva para implementar?</span>
+                        <span data-i18n="faq.q5">Quanto tempo leva para implementar?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>O teste gratuito começa em 2 minutos. A implementação completa com integração aos seus sistemas leva de 1 a 5 dias, dependendo da complexidade. Oferecemos suporte total durante todo o processo.</p>
+                        <p data-i18n="faq.a5">O teste gratuito começa em 2 minutos. A implementação completa com integração aos seus sistemas leva de 1 a 5 dias, dependendo da complexidade. Oferecemos suporte total durante todo o processo.</p>
                     </div>
                 </div>
             </div>
@@ -1123,30 +1079,30 @@
 
     <section id="roi-calculator" class="lead-capture">
         <div class="container">
-            <h2 style="margin-bottom: 2rem;">Calcule Seu Retorno - Bovinos e Búfalos</h2>
+            <h2 style="margin-bottom: 2rem;" data-i18n="roi.title">Calcule Seu Retorno - Bovinos e Búfalos</h2>
             <div class="form-container">
                 <div class="roi-calculator">
-                    <h3 style="color: #2d5016; margin-bottom: 1rem;">Calculadora de ROI</h3>
+                    <h3 style="color: #2d5016; margin-bottom: 1rem;" data-i18n="roi.calculatorTitle">Calculadora de ROI</h3>
                     <div class="form-group">
-                        <label for="cattle-count">Número de cabeças (bovinos + búfalos):</label>
+                        <label for="cattle-count" data-i18n="roi.cattleCount">Número de cabeças (bovinos + búfalos):</label>
                         <input type="number" id="cattle-count" placeholder="ex: 5000" onchange="calculateROI()">
                     </div>
                     <div class="form-group">
-                        <label for="avg-price">Valor médio por cabeça (R$):</label>
-                        <input type="number" id="avg-price" placeholder="ex: 3000 (búfalos valem mais)" onchange="calculateROI()">
+                        <label for="avg-price" data-i18n="roi.avgPrice">Valor médio por cabeça (R$):</label>
+                        <input type="number" id="avg-price" placeholder="ex: 3000" onchange="calculateROI()" data-i18n-placeholder="roi.avgPricePlaceholder">
                     </div>
                     <div id="roi-result" class="roi-result hidden">
                         <p id="roi-text"></p>
                     </div>
                 </div>
 
-                <h3 style="margin: 2rem 0 1rem 0;">Teste Grátis por 36 Horas</h3>
+                <h3 style="margin: 2rem 0 1rem 0;" data-i18n="roi.freeTestTitle">Teste Grátis por 36 Horas</h3>
                 <div style="text-align: center;">
                     <a href="https://oyster-app-zqs92.ondigitalocean.app/dashboard.html" class="cta-button" style="width: 100%; font-size: 1.2rem; padding: 1rem;">
-                        🚀 Começar Teste Gratuito Agora
+                        <span data-i18n="roi.startNow">🚀 Começar Teste Gratuito Agora</span>
                     </a>
                     <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.9;">
-                        ✅ Sem cartão de crédito | 🐄🐃 Bovinos e Búfalos | 📱 Use seu WhatsApp
+                        <span data-i18n="roi.benefits">✅ Sem cartão de crédito | 🐄🐃 Bovinos e Búfalos | 📱 Use seu WhatsApp</span>
                     </p>
                 </div>
             </div>
@@ -1155,18 +1111,320 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 ZapManejo - Do campo ao dashboard: gestão completa direto do WhatsApp</p>
+            <p data-i18n="footer.copyright">&copy; 2025 ZapManejo - Do campo ao dashboard: gestão completa direto do WhatsApp</p>
             <p style="margin-top: 0.5rem; opacity: 0.8;">
-                Suporte completo para bovinos e búfalos | Integra com seus sistemas existentes
+                <span data-i18n="footer.description">Suporte completo para bovinos e búfalos | Integra com seus sistemas existentes</span>
             </p>
             <p style="margin-top: 0.5rem;">
                 <a href="mailto:info@zapmanejo.com" style="color: #25D366;">info@zapmanejo.com</a> | 
-                <a href="https://oyster-app-zqs92.ondigitalocean.app/dashboard.html" style="color: #25D366;">Teste Grátis</a>
+                <a href="https://oyster-app-zqs92.ondigitalocean.app/dashboard.html" style="color: #25D366;" data-i18n="footer.freeTest">Teste Grátis</a>
             </p>
         </div>
     </footer>
 
     <script>
+        // Translations
+        const translations = {
+            pt: {
+                "nav.features": "Funcionalidades",
+                "nav.howItWorks": "Como Funciona",
+                "nav.buffaloes": "Búfalos",
+                "nav.faq": "FAQ",
+                "nav.freeTest": "🚀 Teste Grátis",
+                "hero.title": "Controle seu rebanho pelo WhatsApp sem substituir seu sistema atual",
+                "hero.subtitle": "Simples como uma mensagem, poderoso para integrar, analisar e decidir.",
+                "hero.valueTitle": "✅ Do campo ao dashboard: gestão completa direto do WhatsApp",
+                "hero.value1": "Integra com seu ERP ou planilhas existentes",
+                "hero.value2": "Dashboards inteligentes para melhor tomada de decisão",
+                "hero.value3": "Dados pelo WhatsApp, análise profissional em tempo real",
+                "hero.animalTitle": "🐄🐃 Gestão Completa para Bovinos e Búfalos",
+                "hero.cattleTitle": "🐄 Bovinos",
+                "hero.cattle1": "• Nelore",
+                "hero.cattle2": "• Angus",
+                "hero.cattle3": "• Brahman",
+                "hero.cattle4": "• E mais raças...",
+                "hero.buffaloTitle": "🐃 Búfalos",
+                "hero.buffalo1": "• Murrah",
+                "hero.buffalo2": "• Mediterrâneo",
+                "hero.buffalo3": "• Jafarabadi",
+                "hero.buffalo4": "• Carabao",
+                "demo.message1": "\"Brinco 1234, bezerro macho, nelore, pasto norte\"",
+                "demo.message2": "\"BUF001, fêmea, murrah, 18 litros hoje\"",
+                "demo.autoIntegration": "Dados integrados automaticamente no seu sistema - Bovinos e Búfalos",
+                "cta.interactiveDemo": "🎯 Demonstração Interativa (36 horas grátis)",
+                "cta.calculateROI": "💰 Calcular ROI",
+                "positioning.title": "Como o ZapManejo Se Integra",
+                "positioning.noReplace": "❌ NÃO substitui seu sistema",
+                "positioning.noReplaceDesc": "Mantém seu ERP, planilhas e processos atuais funcionando normalmente.",
+                "positioning.complements": "✅ Complementa e Melhora",
+                "positioning.complementsDesc": "Captura dados via WhatsApp e integra perfeitamente com tudo que você já usa.",
+                "positioning.apis": "🔗 APIs e Conectores",
+                "positioning.apisDesc": "Integração automática com principais sistemas de gestão pecuária do mercado.",
+                "buffalo.title": "🐃 Suporte Completo para Bubalinocultura",
+                "buffalo.description": "ZapManejo é o <strong>primeiro sistema WhatsApp</strong> com suporte completo para búfalos no Brasil. Perfeito para fazendas em Marajó, Amazônia e produtores de mozzarella.",
+                "buffalo.mediterraneanTitle": "Mediterrâneo",
+                "buffalo.murrah": "Alta produção leiteira<br>1.500-2.500 kg/lactação",
+                "buffalo.mediterranean": "Ideal para mozzarella<br>Excelente qualidade do leite",
+                "buffalo.jafarabadi": "Grande porte<br>Dupla aptidão",
+                "buffalo.carabao": "Adaptado ao clima<br>Resistente e versátil",
+                "buffalo.featuresTitle": "Funcionalidades Específicas para Búfalos:",
+                "buffalo.feature1": "✅ Controle de produção leiteira diária",
+                "buffalo.feature2": "✅ Rastreamento para certificação de mozzarella",
+                "buffalo.feature3": "✅ Gestão de búfalos em áreas alagadas",
+                "buffalo.feature4": "✅ Registro de cruzamentos Murrah x Mediterrâneo",
+                "demo.title": "Experimente Agora - 36 Horas Grátis",
+                "demo.description": "Teste com seus dados reais. Sem cartão de crédito. Sem compromisso.",
+                "demo.startNow": "🚀 Iniciar Teste Gratuito Agora",
+                "demo.features": "⏰ Configuração em 2 minutos | 📱 Use seu WhatsApp | 🐄🐃 Bovinos e Búfalos",
+                "features.title": "Principais Funcionalidades",
+                "features.whatsapp": "100% WhatsApp",
+                "features.whatsappDesc": "Interface que todos já conhecem. Zero treinamento necessário.",
+                "features.integration": "Integração Total",
+                "features.integrationDesc": "Conecta com ERP, Excel, sistemas contábeis e ferramentas existentes.",
+                "features.dashboards": "Dashboards Inteligentes",
+                "features.dashboardsDesc": "Análises e relatórios que facilitam decisões e clareza nos resultados.",
+                "features.animals": "Bovinos e Búfalos",
+                "features.animalsDesc": "Único sistema WhatsApp com suporte completo para bubalinocultura.",
+                "features.weather": "Dados Meteorológicos",
+                "features.weatherDesc": "Informações climáticas integradas para melhor planejamento.",
+                "features.support": "Suporte Local",
+                "features.supportDesc": "Criado no Brasil, para a realidade do pecuarista brasileiro.",
+                "faq.title": "Perguntas Frequentes",
+                "faq.q1": "ZapManejo substitui meu sistema atual?",
+                "faq.a1": "<strong>Não!</strong> ZapManejo é um complemento inteligente que captura dados via WhatsApp e integra com seus sistemas existentes. Você mantém seu ERP, planilhas e processos atuais.",
+                "faq.q2": "Funciona para búfalos também?",
+                "faq.a2": "<strong>Sim!</strong> Somos o primeiro sistema WhatsApp com suporte completo para bubalinocultura. Incluímos as 4 principais raças criadas no Brasil: Murrah, Mediterrâneo, Jafarabadi e Carabao. Perfeito para produtores de leite, mozzarella e criadores em Marajó.",
+                "faq.q3": "Como funciona a integração?",
+                "faq.a3": "Oferecemos APIs REST, webhooks, exportação automática para Excel, conectores para os principais ERPs pecuários e integração personalizada. Os dados fluem automaticamente do WhatsApp para seus sistemas.",
+                "faq.q4": "Precisa internet o tempo todo?",
+                "faq.a4": "Não. WhatsApp armazena mensagens offline e sincroniza quando volta a conexão. Perfeito para áreas rurais e regiões como a Amazônia com conectividade intermitente.",
+                "faq.q5": "Quanto tempo leva para implementar?",
+                "faq.a5": "O teste gratuito começa em 2 minutos. A implementação completa com integração aos seus sistemas leva de 1 a 5 dias, dependendo da complexidade. Oferecemos suporte total durante todo o processo.",
+                "roi.title": "Calcule Seu Retorno - Bovinos e Búfalos",
+                "roi.calculatorTitle": "Calculadora de ROI",
+                "roi.cattleCount": "Número de cabeças (bovinos + búfalos):",
+                "roi.avgPrice": "Valor médio por cabeça (R$):",
+                "roi.avgPricePlaceholder": "ex: 3000 (búfalos valem mais)",
+                "roi.freeTestTitle": "Teste Grátis por 36 Horas",
+                "roi.startNow": "🚀 Começar Teste Gratuito Agora",
+                "roi.benefits": "✅ Sem cartão de crédito | 🐄🐃 Bovinos e Búfalos | 📱 Use seu WhatsApp",
+                "footer.copyright": "&copy; 2025 ZapManejo - Do campo ao dashboard: gestão completa direto do WhatsApp",
+                "footer.description": "Suporte completo para bovinos e búfalos | Integra com seus sistemas existentes",
+                "footer.freeTest": "Teste Grátis"
+            },
+            en: {
+                "nav.features": "Features",
+                "nav.howItWorks": "How It Works",
+                "nav.buffaloes": "Buffaloes",
+                "nav.faq": "FAQ",
+                "nav.freeTest": "🚀 Free Trial",
+                "hero.title": "Control your herd via WhatsApp without replacing your current system",
+                "hero.subtitle": "Simple as a message, powerful for integration, analysis, and decision-making.",
+                "hero.valueTitle": "✅ From field to dashboard: complete management via WhatsApp",
+                "hero.value1": "Integrates with your existing ERP or spreadsheets",
+                "hero.value2": "Smart dashboards for better decision making",
+                "hero.value3": "WhatsApp data entry, professional real-time analysis",
+                "hero.animalTitle": "🐄🐃 Complete Management for Cattle and Buffaloes",
+                "hero.cattleTitle": "🐄 Cattle",
+                "hero.cattle1": "• Nelore",
+                "hero.cattle2": "• Angus",
+                "hero.cattle3": "• Brahman",
+                "hero.cattle4": "• And more breeds...",
+                "hero.buffaloTitle": "🐃 Buffaloes",
+                "hero.buffalo1": "• Murrah",
+                "hero.buffalo2": "• Mediterranean",
+                "hero.buffalo3": "• Jafarabadi",
+                "hero.buffalo4": "• Carabao",
+                "demo.message1": "\"Tag 1234, male calf, nelore, north pasture\"",
+                "demo.message2": "\"BUF001, female, murrah, 18 liters today\"",
+                "demo.autoIntegration": "Data automatically integrated into your system - Cattle and Buffaloes",
+                "cta.interactiveDemo": "🎯 Interactive Demo (36 hours free)",
+                "cta.calculateROI": "💰 Calculate ROI",
+                "positioning.title": "How ZapManejo Integrates",
+                "positioning.noReplace": "❌ Does NOT replace your system",
+                "positioning.noReplaceDesc": "Keeps your ERP, spreadsheets, and current processes running normally.",
+                "positioning.complements": "✅ Complements and Improves",
+                "positioning.complementsDesc": "Captures data via WhatsApp and integrates perfectly with everything you already use.",
+                "positioning.apis": "🔗 APIs and Connectors",
+                "positioning.apisDesc": "Automatic integration with major livestock management systems.",
+                "buffalo.title": "🐃 Complete Support for Buffalo Farming",
+                "buffalo.description": "ZapManejo is the <strong>first WhatsApp system</strong> with complete buffalo support in Brazil. Perfect for farms in Marajó, Amazon, and mozzarella producers.",
+                "buffalo.mediterraneanTitle": "Mediterranean",
+                "buffalo.murrah": "High milk production<br>1,500-2,500 kg/lactation",
+                "buffalo.mediterranean": "Ideal for mozzarella<br>Excellent milk quality",
+                "buffalo.jafarabadi": "Large size<br>Dual purpose",
+                "buffalo.carabao": "Climate adapted<br>Resistant and versatile",
+                "buffalo.featuresTitle": "Specific Features for Buffaloes:",
+                "buffalo.feature1": "✅ Daily milk production control",
+                "buffalo.feature2": "✅ Tracking for mozzarella certification",
+                "buffalo.feature3": "✅ Management of buffaloes in flooded areas",
+                "buffalo.feature4": "✅ Murrah x Mediterranean crossbreeding records",
+                "demo.title": "Try Now - 36 Hours Free",
+                "demo.description": "Test with your real data. No credit card. No commitment.",
+                "demo.startNow": "🚀 Start Free Trial Now",
+                "demo.features": "⏰ 2-minute setup | 📱 Use your WhatsApp | 🐄🐃 Cattle and Buffaloes",
+                "features.title": "Main Features",
+                "features.whatsapp": "100% WhatsApp",
+                "features.whatsappDesc": "Interface everyone already knows. Zero training required.",
+                "features.integration": "Total Integration",
+                "features.integrationDesc": "Connects with ERP, Excel, accounting systems, and existing tools.",
+                "features.dashboards": "Smart Dashboards",
+                "features.dashboardsDesc": "Analytics and reports that facilitate decisions and clarity in results.",
+                "features.animals": "Cattle and Buffaloes",
+                "features.animalsDesc": "The only WhatsApp system with complete buffalo farming support.",
+                "features.weather": "Weather Data",
+                "features.weatherDesc": "Integrated climate information for better planning.",
+                "features.support": "Local Support",
+                "features.supportDesc": "Created in Brazil, for the Brazilian rancher's reality.",
+                "faq.title": "Frequently Asked Questions",
+                "faq.q1": "Does ZapManejo replace my current system?",
+                "faq.a1": "<strong>No!</strong> ZapManejo is a smart complement that captures data via WhatsApp and integrates with your existing systems. You keep your ERP, spreadsheets, and current processes.",
+                "faq.q2": "Does it work for buffaloes too?",
+                "faq.a2": "<strong>Yes!</strong> We are the first WhatsApp system with complete buffalo farming support. We include the 4 main breeds raised in Brazil: Murrah, Mediterranean, Jafarabadi, and Carabao. Perfect for milk producers, mozzarella makers, and breeders in Marajó.",
+                "faq.q3": "How does integration work?",
+                "faq.a3": "We offer REST APIs, webhooks, automatic Excel export, connectors for major livestock ERPs, and custom integration. Data flows automatically from WhatsApp to your systems.",
+                "faq.q4": "Does it need internet all the time?",
+                "faq.a4": "No. WhatsApp stores messages offline and syncs when connection returns. Perfect for rural areas and regions like the Amazon with intermittent connectivity.",
+                "faq.q5": "How long does implementation take?",
+                "faq.a5": "The free trial starts in 2 minutes. Complete implementation with integration to your systems takes 1 to 5 days, depending on complexity. We offer full support throughout the process.",
+                "roi.title": "Calculate Your Return - Cattle and Buffaloes",
+                "roi.calculatorTitle": "ROI Calculator",
+                "roi.cattleCount": "Number of heads (cattle + buffaloes):",
+                "roi.avgPrice": "Average value per head ($):",
+                "roi.avgPricePlaceholder": "e.g., 3000 (buffaloes worth more)",
+                "roi.freeTestTitle": "Free Trial for 36 Hours",
+                "roi.startNow": "🚀 Start Free Trial Now",
+                "roi.benefits": "✅ No credit card | 🐄🐃 Cattle and Buffaloes | 📱 Use your WhatsApp",
+                "footer.copyright": "&copy; 2025 ZapManejo - From field to dashboard: complete management via WhatsApp",
+                "footer.description": "Complete support for cattle and buffaloes | Integrates with your existing systems",
+                "footer.freeTest": "Free Trial"
+            },
+            es: {
+                "nav.features": "Funcionalidades",
+                "nav.howItWorks": "Cómo Funciona",
+                "nav.buffaloes": "Búfalos",
+                "nav.faq": "FAQ",
+                "nav.freeTest": "🚀 Prueba Gratis",
+                "hero.title": "Controla tu rebaño por WhatsApp sin reemplazar tu sistema actual",
+                "hero.subtitle": "Simple como un mensaje, poderoso para integrar, analizar y decidir.",
+                "hero.valueTitle": "✅ Del campo al dashboard: gestión completa desde WhatsApp",
+                "hero.value1": "Se integra con tu ERP o hojas de cálculo existentes",
+                "hero.value2": "Dashboards inteligentes para mejor toma de decisiones",
+                "hero.value3": "Datos por WhatsApp, análisis profesional en tiempo real",
+                "hero.animalTitle": "🐄🐃 Gestión Completa para Bovinos y Búfalos",
+                "hero.cattleTitle": "🐄 Bovinos",
+                "hero.cattle1": "• Nelore",
+                "hero.cattle2": "• Angus",
+                "hero.cattle3": "• Brahman",
+                "hero.cattle4": "• Y más razas...",
+                "hero.buffaloTitle": "🐃 Búfalos",
+                "hero.buffalo1": "• Murrah",
+                "hero.buffalo2": "• Mediterráneo",
+                "hero.buffalo3": "• Jafarabadi",
+                "hero.buffalo4": "• Carabao",
+                "demo.message1": "\"Arete 1234, ternero macho, nelore, potrero norte\"",
+                "demo.message2": "\"BUF001, hembra, murrah, 18 litros hoy\"",
+                "demo.autoIntegration": "Datos integrados automáticamente en tu sistema - Bovinos y Búfalos",
+                "cta.interactiveDemo": "🎯 Demostración Interactiva (36 horas gratis)",
+                "cta.calculateROI": "💰 Calcular ROI",
+                "positioning.title": "Cómo Se Integra ZapManejo",
+                "positioning.noReplace": "❌ NO reemplaza tu sistema",
+                "positioning.noReplaceDesc": "Mantiene tu ERP, hojas de cálculo y procesos actuales funcionando normalmente.",
+                "positioning.complements": "✅ Complementa y Mejora",
+                "positioning.complementsDesc": "Captura datos vía WhatsApp e integra perfectamente con todo lo que ya usas.",
+                "positioning.apis": "🔗 APIs y Conectores",
+                "positioning.apisDesc": "Integración automática con principales sistemas de gestión ganadera del mercado.",
+                "buffalo.title": "🐃 Soporte Completo para Bubalinos",
+                "buffalo.description": "ZapManejo es el <strong>primer sistema WhatsApp</strong> con soporte completo para búfalos en Brasil. Perfecto para haciendas en Marajó, Amazonía y productores de mozzarella.",
+                "buffalo.mediterraneanTitle": "Mediterráneo",
+                "buffalo.murrah": "Alta producción lechera<br>1.500-2.500 kg/lactación",
+                "buffalo.mediterranean": "Ideal para mozzarella<br>Excelente calidad de leche",
+                "buffalo.jafarabadi": "Gran porte<br>Doble propósito",
+                "buffalo.carabao": "Adaptado al clima<br>Resistente y versátil",
+                "buffalo.featuresTitle": "Funcionalidades Específicas para Búfalos:",
+                "buffalo.feature1": "✅ Control de producción lechera diaria",
+                "buffalo.feature2": "✅ Rastreo para certificación de mozzarella",
+                "buffalo.feature3": "✅ Gestión de búfalos en áreas inundadas",
+                "buffalo.feature4": "✅ Registro de cruces Murrah x Mediterráneo",
+                "demo.title": "Prueba Ahora - 36 Horas Gratis",
+                "demo.description": "Prueba con tus datos reales. Sin tarjeta de crédito. Sin compromiso.",
+                "demo.startNow": "🚀 Iniciar Prueba Gratuita Ahora",
+                "demo.features": "⏰ Configuración en 2 minutos | 📱 Usa tu WhatsApp | 🐄🐃 Bovinos y Búfalos",
+                "features.title": "Principales Funcionalidades",
+                "features.whatsapp": "100% WhatsApp",
+                "features.whatsappDesc": "Interfaz que todos ya conocen. Cero entrenamiento necesario.",
+                "features.integration": "Integración Total",
+                "features.integrationDesc": "Conecta con ERP, Excel, sistemas contables y herramientas existentes.",
+                "features.dashboards": "Dashboards Inteligentes",
+                "features.dashboardsDesc": "Análisis e informes que facilitan decisiones y claridad en los resultados.",
+                "features.animals": "Bovinos y Búfalos",
+                "features.animalsDesc": "Único sistema WhatsApp con soporte completo para bubalinocultura.",
+                "features.weather": "Datos Meteorológicos",
+                "features.weatherDesc": "Información climática integrada para mejor planificación.",
+                "features.support": "Soporte Local",
+                "features.supportDesc": "Creado en Brasil, para la realidad del ganadero brasileño.",
+                "faq.title": "Preguntas Frecuentes",
+                "faq.q1": "¿ZapManejo reemplaza mi sistema actual?",
+                "faq.a1": "<strong>¡No!</strong> ZapManejo es un complemento inteligente que captura datos vía WhatsApp e integra con tus sistemas existentes. Mantienes tu ERP, hojas de cálculo y procesos actuales.",
+                "faq.q2": "¿Funciona para búfalos también?",
+                "faq.a2": "<strong>¡Sí!</strong> Somos el primer sistema WhatsApp con soporte completo para bubalinocultura. Incluimos las 4 principales razas criadas en Brasil: Murrah, Mediterráneo, Jafarabadi y Carabao. Perfecto para productores de leche, mozzarella y criadores en Marajó.",
+                "faq.q3": "¿Cómo funciona la integración?",
+                "faq.a3": "Ofrecemos APIs REST, webhooks, exportación automática a Excel, conectores para los principales ERPs ganaderos e integración personalizada. Los datos fluyen automáticamente de WhatsApp a tus sistemas.",
+                "faq.q4": "¿Necesita internet todo el tiempo?",
+                "faq.a4": "No. WhatsApp almacena mensajes offline y sincroniza cuando vuelve la conexión. Perfecto para áreas rurales y regiones como la Amazonía con conectividad intermitente.",
+                "faq.q5": "¿Cuánto tiempo lleva implementar?",
+                "faq.a5": "La prueba gratuita comienza en 2 minutos. La implementación completa con integración a tus sistemas lleva de 1 a 5 días, dependiendo de la complejidad. Ofrecemos soporte total durante todo el proceso.",
+                "roi.title": "Calcula Tu Retorno - Bovinos y Búfalos",
+                "roi.calculatorTitle": "Calculadora de ROI",
+                "roi.cattleCount": "Número de cabezas (bovinos + búfalos):",
+                "roi.avgPrice": "Valor promedio por cabeza ($):",
+                "roi.avgPricePlaceholder": "ej: 3000 (búfalos valen más)",
+                "roi.freeTestTitle": "Prueba Gratis por 36 Horas",
+                "roi.startNow": "🚀 Comenzar Prueba Gratuita Ahora",
+                "roi.benefits": "✅ Sin tarjeta de crédito | 🐄🐃 Bovinos y Búfalos | 📱 Usa tu WhatsApp",
+                "footer.copyright": "&copy; 2025 ZapManejo - Del campo al dashboard: gestión completa desde WhatsApp",
+                "footer.description": "Soporte completo para bovinos y búfalos | Se integra con tus sistemas existentes",
+                "footer.freeTest": "Prueba Gratis"
+            }
+        };
+
+        let currentLang = 'pt';
+
+        function changeLanguage() {
+            const selector = document.getElementById('languageSelector');
+            currentLang = selector.value;
+            
+            // Update all elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    element.innerHTML = translations[currentLang][key];
+                }
+            });
+            
+            // Update placeholders
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+                const key = element.getAttribute('data-i18n-placeholder');
+                if (translations[currentLang][key]) {
+                    element.placeholder = translations[currentLang][key];
+                }
+            });
+            
+            // Update HTML lang attribute
+            document.documentElement.lang = currentLang === 'pt' ? 'pt-BR' : currentLang === 'es' ? 'es' : 'en';
+            
+            // Update currency symbol in ROI calculator
+            updateROICurrency();
+        }
+
+        function updateROICurrency() {
+            const currencySymbol = currentLang === 'pt' ? 'R$' : '$';
+            const avgPriceLabel = document.querySelector('label[for="avg-price"]');
+            if (avgPriceLabel && translations[currentLang]["roi.avgPrice"]) {
+                avgPriceLabel.innerHTML = translations[currentLang]["roi.avgPrice"].replace('R$', currencySymbol);
+            }
+        }
+
         function toggleFAQ(element) {
             const answer = element.nextElementSibling;
             const icon = element.querySelector('i');
@@ -1189,13 +1447,33 @@
                 const resultElement = document.getElementById('roi-result');
                 const textElement = document.getElementById('roi-text');
                 
-                textElement.innerHTML = 
-                    '<strong>Seu Rebanho:</strong> ' + parseInt(cattleCount).toLocaleString() + ' cabeças<br>' +
-                    '<strong>Valor Total:</strong> R$ ' + totalValue.toLocaleString() + '<br>' +
-                    '<strong>Economia Estimada:</strong> R$ ' + Math.round(preventableLoss).toLocaleString() + '/ano<br>' +
-                    '<strong>Custo ZapManejo:</strong> R$ 2.988/ano<br>' +
-                    '<strong>ROI:</strong> ' + Math.round(roi) + '% no primeiro ano<br>' +
-                    '<small>*Búfalos geralmente têm ROI maior devido ao maior valor unitário</small>';
+                const currencySymbol = currentLang === 'pt' ? 'R$' : '$';
+                
+                if (currentLang === 'pt') {
+                    textElement.innerHTML = 
+                        '<strong>Seu Rebanho:</strong> ' + parseInt(cattleCount).toLocaleString() + ' cabeças<br>' +
+                        '<strong>Valor Total:</strong> R$ ' + totalValue.toLocaleString() + '<br>' +
+                        '<strong>Economia Estimada:</strong> R$ ' + Math.round(preventableLoss).toLocaleString() + '/ano<br>' +
+                        '<strong>Custo ZapManejo:</strong> R$ 2.988/ano<br>' +
+                        '<strong>ROI:</strong> ' + Math.round(roi) + '% no primeiro ano<br>' +
+                        '<small>*Búfalos geralmente têm ROI maior devido ao maior valor unitário</small>';
+                } else if (currentLang === 'en') {
+                    textElement.innerHTML = 
+                        '<strong>Your Herd:</strong> ' + parseInt(cattleCount).toLocaleString() + ' heads<br>' +
+                        '<strong>Total Value:</strong> $ ' + totalValue.toLocaleString() + '<br>' +
+                        '<strong>Estimated Savings:</strong> $ ' + Math.round(preventableLoss).toLocaleString() + '/year<br>' +
+                        '<strong>ZapManejo Cost:</strong> $ 2,988/year<br>' +
+                        '<strong>ROI:</strong> ' + Math.round(roi) + '% in the first year<br>' +
+                        '<small>*Buffaloes typically have higher ROI due to higher unit value</small>';
+                } else {
+                    textElement.innerHTML = 
+                        '<strong>Tu Rebaño:</strong> ' + parseInt(cattleCount).toLocaleString() + ' cabezas<br>' +
+                        '<strong>Valor Total:</strong> $ ' + totalValue.toLocaleString() + '<br>' +
+                        '<strong>Ahorro Estimado:</strong> $ ' + Math.round(preventableLoss).toLocaleString() + '/año<br>' +
+                        '<strong>Costo ZapManejo:</strong> $ 2.988/año<br>' +
+                        '<strong>ROI:</strong> ' + Math.round(roi) + '% en el primer año<br>' +
+                        '<small>*Los búfalos generalmente tienen mayor ROI debido al mayor valor unitario</small>';
+                }
                 
                 resultElement.classList.remove('hidden');
             }
