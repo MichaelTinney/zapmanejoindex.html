@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZapManejo - Controle seu rebanho pelo WhatsApp sem substituir seu sistema atual</title>
-    <meta name="description" content="ZapManejo integra com seus sistemas existentes. Gestão de bovinos e búfalos. Simples como uma mensagem, poderoso para integrar, analisar e decidir.">
+    <title>ZapManejo - Dashboard Profissional para Gestão Pecuária</title>
+    <meta name="description" content="ZapManejo - Sistema completo de gestão pecuária com coleta de dados via WhatsApp e análise profissional em dashboards inteligentes.">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
@@ -251,47 +251,6 @@
             flex-wrap: wrap;
             margin-top: 2rem;
         }
-        
-        .whatsapp-demo {
-            background: rgba(255,255,255,0.1);
-            border-radius: 15px;
-            padding: 2rem;
-            margin: 3rem auto;
-            max-width: 600px;
-            backdrop-filter: blur(10px);
-        }
-        
-        .chat-message {
-            background: #25D366;
-            color: white;
-            padding: 1rem;
-            border-radius: 18px;
-            margin-bottom: 1rem;
-            text-align: left;
-            position: relative;
-            font-size: 1.1rem;
-        }
-        
-        .chat-message::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            right: -10px;
-            width: 0;
-            height: 0;
-            border: 10px solid transparent;
-            border-top-color: #25D366;
-            border-bottom: 0;
-            margin-bottom: -10px;
-        }
-
-        .chat-message.buffalo {
-            background: linear-gradient(135deg, #25D366, #1976d2);
-        }
-
-        .chat-message.buffalo::after {
-            border-top-color: #1976d2;
-        }
 
         .positioning {
             padding: 4rem 0;
@@ -335,27 +294,6 @@
             transform: scale(1.02);
         }
 
-        .demo-video {
-            padding: 4rem 0;
-            text-align: center;
-            background: white;
-        }
-
-        .video-placeholder {
-            background: #000;
-            border-radius: 15px;
-            padding: 4rem 2rem;
-            margin: 2rem auto;
-            max-width: 800px;
-            color: white;
-        }
-
-        .video-placeholder i {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            color: #25D366;
-        }
-        
         .features {
             padding: 4rem 0;
             background: white;
@@ -438,28 +376,6 @@
             margin-bottom: 0.5rem;
         }
 
-        .social-proof {
-            padding: 4rem 0;
-            background: #f8f9fa;
-            text-align: center;
-        }
-
-        .testimonials {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .testimonial-placeholder {
-            font-style: italic;
-            color: #666;
-            padding: 2rem;
-            border: 2px dashed #ddd;
-            border-radius: 10px;
-            background: white;
-        }
-
         .faq {
             padding: 4rem 0;
             background: white;
@@ -501,252 +417,126 @@
             display: block;
         }
 
-        .lead-capture {
-            padding: 4rem 0;
-            background: linear-gradient(135deg, #2d5016, #25D366);
-            color: white;
-            text-align: center;
-        }
-
-        .form-container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: rgba(255,255,255,0.1);
-            padding: 2rem;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-            text-align: left;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
-
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 1rem;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        .roi-calculator {
-            background: rgba(255,255,255,0.9);
-            color: #333;
-            padding: 2rem;
-            border-radius: 10px;
-            margin: 2rem 0;
-        }
-
-        .roi-result {
-            background: #25D366;
-            color: white;
-            padding: 1rem;
-            border-radius: 5px;
-            margin-top: 1rem;
-            font-weight: bold;
-        }
-
-        .hidden {
-            display: none;
-        }
-
         footer {
             background: #2d5016;
             color: white;
             text-align: center;
             padding: 2rem 0;
         }
-        
-        /* Weather Demo Section Styles */
-        .weather-demo-section {
-            padding: 80px 20px;
-            background: linear-gradient(rgba(30, 60, 114, 0.8), rgba(42, 82, 152, 0.8)), url('https://raw.githubusercontent.com/MichaelTinney/zapmanejoindex.html/main/Rainbow.jpg');
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
 
-        .demo-container {
-            position: relative;
-            max-width: 800px;
-            width: 100%;
-            margin: 0 auto;
-        }
-
-        .feature-banner {
-            background: linear-gradient(45deg, #ff6b35, #f7931e);
-            color: white;
-            padding: 20px 30px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            text-align: center;
-            position: relative;
-        }
-
-        .feature-banner h2 {
-            margin: 0 0 10px 0;
-            font-size: 28px;
-            font-weight: bold;
-            position: relative;
-            z-index: 1;
-        }
-
-        .feature-banner p {
-            margin: 0;
-            font-size: 16px;
-            opacity: 0.95;
-            position: relative;
-            z-index: 1;
-        }
-
-        .phone-container {
-            background: #000;
-            border-radius: 25px;
-            padding: 8px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            max-width: 350px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 10;
-            isolation: isolate;
-        }
-
-        .phone-screen {
-            background: #111;
-            border-radius: 18px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .status-bar {
-            background: #075e54;
-            color: white;
-            padding: 12px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        .chat-header {
-            background: #075e54;
-            color: white;
-            padding: 15px 20px;
-            display: flex;
-            align-items: center;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #25d366, #128c7e);
-            display: flex;
-            align-items: center;
+        /* Modal Styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
             justify-content: center;
-            margin-right: 12px;
-            font-weight: bold;
-            font-size: 18px;
+            align-items: center;
         }
 
-        .chat-info h3 {
-            margin: 0;
-            font-size: 16px;
-            font-weight: 500;
-        }
-
-        .chat-info p {
-            margin: 2px 0 0 0;
-            font-size: 12px;
-            opacity: 0.8;
-        }
-
-        .chat-content {
-            background: #0d1418;
-            background-image: 
-                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3), transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3), transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(120, 200, 255, 0.3), transparent 50%);
-            min-height: 500px;
-            padding: 20px;
-            position: relative;
-        }
-
-        .message {
-            margin: 15px 0;
+        .modal-overlay.active {
             display: flex;
-            align-items: flex-end;
-            animation: messageSlide 0.3s ease-out;
         }
 
-        @keyframes messageSlide {
+        .modal {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
             from {
+                transform: translateY(50px);
                 opacity: 0;
-                transform: translateY(20px);
             }
             to {
-                opacity: 1;
                 transform: translateY(0);
+                opacity: 1;
             }
         }
 
-        .message.sent {
-            justify-content: flex-end;
+        .modal h2 {
+            color: #2d5016;
+            margin-bottom: 1.5rem;
+            text-align: center;
         }
 
-        .message.received {
-            justify-content: flex-start;
+        .form-group {
+            margin-bottom: 1.5rem;
         }
 
-        .message-bubble {
-            max-width: 85%;
-            padding: 12px 16px;
-            border-radius: 18px;
-            font-size: 14px;
-            line-height: 1.4;
-            position: relative;
-            word-wrap: break-word;
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
         }
 
-        .message.sent .message-bubble {
-            background: #005c4b;
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #25D366;
+        }
+
+        .form-group small {
+            color: #666;
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+            display: block;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .modal-buttons button {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .modal-buttons .submit-btn {
+            background: #25D366;
             color: white;
-            border-bottom-right-radius: 4px;
         }
 
-        .message.received .message-bubble {
-            background: #202c33;
-            color: #e9edef;
-            border-bottom-left-radius: 4px;
+        .modal-buttons .submit-btn:hover {
+            background: #20b358;
         }
 
-        .weather-response {
-            background: linear-gradient(135deg, #1e3c72, #2a5298) !important;
-            border: 1px solid #4a90e2;
-            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+        .modal-buttons .cancel-btn {
+            background: #e0e0e0;
+            color: #333;
         }
 
-        .weather-icon {
-            font-size: 20px;
-            margin-right: 8px;
-        }
-
-        .timestamp {
-            font-size: 11px;
-            opacity: 0.7;
-            margin-top: 4px;
-            text-align: right;
+        .modal-buttons .cancel-btn:hover {
+            background: #d0d0d0;
         }
 
         @media (max-width: 768px) {
@@ -774,7 +564,6 @@
             
             .features-grid,
             .positioning-grid,
-            .testimonials,
             .buffalo-grid {
                 grid-template-columns: 1fr;
             }
@@ -786,6 +575,68 @@
     </style>
 </head>
 <body>
+    <!-- Information Collection Modal -->
+    <div id="infoModal" class="modal-overlay">
+        <div class="modal">
+            <h2>📊 Acesse o Dashboard ZapManejo</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 2rem;">
+                Preencha suas informações para acessar nossa demonstração completa do sistema
+            </p>
+            <form id="infoForm">
+                <div class="form-group">
+                    <label for="userName">Nome Completo *</label>
+                    <input type="text" id="userName" name="userName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="userEmail">E-mail *</label>
+                    <input type="email" id="userEmail" name="userEmail" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="userPhone">WhatsApp/Telefone *</label>
+                    <input type="tel" id="userPhone" name="userPhone" placeholder="(XX) XXXXX-XXXX" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="farmName">Nome da Fazenda *</label>
+                    <input type="text" id="farmName" name="farmName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="userState">Estado *</label>
+                    <select id="userState" name="userState" required>
+                        <option value="">Selecione seu estado</option>
+                        <option value="MT">Mato Grosso</option>
+                        <option value="MS">Mato Grosso do Sul</option>
+                        <option value="GO">Goiás</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="PA">Pará</option>
+                        <option value="RO">Rondônia</option>
+                        <option value="TO">Tocantins</option>
+                        <option value="BA">Bahia</option>
+                        <option value="PR">Paraná</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="cattleCount">Número de Cabeças (opcional)</label>
+                    <input type="number" id="cattleCount" name="cattleCount" placeholder="Ex: 500">
+                    <small>Inclua bovinos e búfalos</small>
+                </div>
+                
+                <div class="modal-buttons">
+                    <button type="button" class="cancel-btn" onclick="closeModal()">Cancelar</button>
+                    <button type="submit" class="submit-btn">Acessar Dashboard</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <header>
         <nav class="container">
             <div class="logo">
@@ -805,8 +656,8 @@
                 <li><a href="#bufalos" data-i18n="nav.buffaloes">Búfalos</a></li>
                 <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
             </ul>
-            <a href="https://oyster-app-zqs92.ondigitalocean.app/dashboard.html" class="cta-button demo-btn" target="_blank">
-                <span data-i18n="nav.freeTest">🚀 Teste Grátis</span>
+            <a href="#" onclick="showModal(event)" class="cta-button demo-btn">
+                <span data-i18n="nav.viewDashboard">📊 Ver o Dashboard</span>
             </a>
         </nav>
     </header>
@@ -814,15 +665,15 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1 data-i18n="hero.title">Controle seu rebanho pelo WhatsApp sem substituir seu sistema atual</h1>
-                <p data-i18n="hero.subtitle">Simples como uma mensagem, poderoso para integrar, analisar e decidir.</p>
+                <h1 data-i18n="hero.title">Dashboard Profissional para Gestão Completa do seu Rebanho</h1>
+                <p data-i18n="hero.subtitle">Coleta de dados simplificada via WhatsApp, análise profissional em dashboards inteligentes.</p>
                 
                 <div class="value-proposition">
-                    <h3 data-i18n="hero.valueTitle">✅ Do campo ao dashboard: gestão completa direto do WhatsApp</h3>
+                    <h3 data-i18n="hero.valueTitle">✅ Sistema Completo de Gestão Pecuária</h3>
                     <ul>
-                        <li data-i18n="hero.value1">Integra com seu ERP ou planilhas existentes</li>
-                        <li data-i18n="hero.value2">Dashboards inteligentes para melhor tomada de decisão</li>
-                        <li data-i18n="hero.value3">Dados pelo WhatsApp, análise profissional em tempo real</li>
+                        <li data-i18n="hero.value1">Dashboards profissionais com análises em tempo real</li>
+                        <li data-i18n="hero.value2">Coleta de dados prática via WhatsApp</li>
+                        <li data-i18n="hero.value3">Exportação para CSV e PDF para seus relatórios</li>
                     </ul>
                 </div>
 
@@ -849,26 +700,10 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="whatsapp-demo">
-                    <div class="chat-message">
-                        <span data-i18n="demo.message1">"Brinco 1234, bezerro macho, nelore, pasto norte"</span>
-                    </div>
-                    <div class="chat-message buffalo">
-                        <span data-i18n="demo.message2">"BUF001, fêmea, murrah, 18 litros hoje"</span>
-                    </div>
-                    <p style="margin-top: 1rem; opacity: 0.9;">
-                        <i class="fas fa-magic" style="margin-right: 0.5rem;"></i>
-                        <span data-i18n="demo.autoIntegration">Dados integrados automaticamente no seu sistema - Bovinos e Búfalos</span>
-                    </p>
-                </div>
                 
                 <div class="cta-buttons">
-                    <a href="https://oyster-app-zqs92.ondigitalocean.app/dashboard.html" class="cta-button demo-btn">
-                        <span data-i18n="cta.interactiveDemo">🎯 Demonstração Interativa (36 horas grátis)</span>
-                    </a>
-                    <a href="#roi-calculator" class="cta-button secondary">
-                        <span data-i18n="cta.calculateROI">💰 Calcular ROI</span>
+                    <a href="#" onclick="showModal(event)" class="cta-button demo-btn">
+                        <span data-i18n="cta.accessDashboard">📊 Acessar Dashboard Profissional</span>
                     </a>
                 </div>
             </div>
@@ -877,24 +712,24 @@
 
     <section class="positioning">
         <div class="container">
-            <h2 class="section-title" data-i18n="positioning.title">Como o ZapManejo Se Integra</h2>
+            <h2 class="section-title" data-i18n="positioning.title">Como o ZapManejo Funciona</h2>
             <div class="positioning-grid">
                 <div class="positioning-card">
-                    <i class="fas fa-times-circle" style="color: #dc3545; font-size: 2rem; margin-bottom: 1rem;"></i>
-                    <h3 data-i18n="positioning.noReplace">❌ NÃO substitui seu sistema</h3>
-                    <p data-i18n="positioning.noReplaceDesc">Mantém seu ERP, planilhas e processos atuais funcionando normalmente.</p>
+                    <i class="fas fa-comments" style="color: #25D366; font-size: 2rem; margin-bottom: 1rem;"></i>
+                    <h3 data-i18n="positioning.collect">📱 Coleta via WhatsApp</h3>
+                    <p data-i18n="positioning.collectDesc">Vaqueiros enviam dados do campo em linguagem simples pelo WhatsApp.</p>
                 </div>
                 
                 <div class="positioning-card highlight">
-                    <i class="fas fa-check-circle" style="color: #25D366; font-size: 2rem; margin-bottom: 1rem;"></i>
-                    <h3 data-i18n="positioning.complements">✅ Complementa e Melhora</h3>
-                    <p data-i18n="positioning.complementsDesc">Captura dados via WhatsApp e integra perfeitamente com tudo que você já usa.</p>
+                    <i class="fas fa-chart-line" style="color: #25D366; font-size: 2rem; margin-bottom: 1rem;"></i>
+                    <h3 data-i18n="positioning.analyze">📊 Dashboard Profissional</h3>
+                    <p data-i18n="positioning.analyzeDesc">Dados organizados automaticamente em dashboards com análises poderosas.</p>
                 </div>
                 
                 <div class="positioning-card">
-                    <i class="fas fa-plug" style="color: #25D366; font-size: 2rem; margin-bottom: 1rem;"></i>
-                    <h3 data-i18n="positioning.apis">🔗 APIs e Conectores</h3>
-                    <p data-i18n="positioning.apisDesc">Integração automática com principais sistemas de gestão pecuária do mercado.</p>
+                    <i class="fas fa-file-export" style="color: #25D366; font-size: 2rem; margin-bottom: 1rem;"></i>
+                    <h3 data-i18n="positioning.export">📁 Exportação Flexível</h3>
+                    <p data-i18n="positioning.exportDesc">Baixe seus dados em CSV ou PDF para usar onde precisar.</p>
                 </div>
             </div>
         </div>
@@ -905,7 +740,7 @@
             <h2 class="section-title" data-i18n="buffalo.title">🐃 Suporte Completo para Bubalinocultura</h2>
             <div class="buffalo-content">
                 <p style="font-size: 1.2rem; margin-bottom: 2rem;">
-                    <span data-i18n="buffalo.description">ZapManejo é o <strong>primeiro sistema WhatsApp</strong> com suporte completo para búfalos no Brasil. Perfeito para fazendas em Marajó, Amazônia e produtores de mozzarella.</span>
+                    <span data-i18n="buffalo.description">Sistema completo com suporte especializado para búfalos. Perfeito para fazendas em Marajó, Amazônia e produtores de mozzarella.</span>
                 </p>
                 
                 <div class="buffalo-grid">
@@ -933,34 +768,6 @@
                         <p data-i18n="buffalo.carabao">Adaptado ao clima<br>Resistente e versátil</p>
                     </div>
                 </div>
-
-                <div style="margin-top: 2rem; padding: 1.5rem; background: white; border-radius: 15px;">
-                    <h3 style="color: #1976d2; margin-bottom: 1rem;" data-i18n="buffalo.featuresTitle">Funcionalidades Específicas para Búfalos:</h3>
-                    <ul style="text-align: left; max-width: 600px; margin: 0 auto; list-style: none;">
-                        <li style="margin: 0.5rem 0;" data-i18n="buffalo.feature1">✅ Controle de produção leiteira diária</li>
-                        <li style="margin: 0.5rem 0;" data-i18n="buffalo.feature2">✅ Rastreamento para certificação de mozzarella</li>
-                        <li style="margin: 0.5rem 0;" data-i18n="buffalo.feature3">✅ Gestão de búfalos em áreas alagadas</li>
-                        <li style="margin: 0.5rem 0;" data-i18n="buffalo.feature4">✅ Registro de cruzamentos Murrah x Mediterrâneo</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="demonstracao" class="demo-video">
-        <div class="container">
-            <h2 class="section-title" data-i18n="demo.title">Experimente Agora - 36 Horas Grátis</h2>
-            
-            <div style="text-align: center; margin: 2rem 0;">
-                <p style="font-size: 1.2rem; margin-bottom: 2rem;">
-                    <span data-i18n="demo.description">Teste com seus dados reais por 36 horas. Sem compromisso.</span>
-                </p>
-                <a href="https://oyster-app-zqs92.ondigitalocean.app/dashboard.html" class="cta-button demo-btn" style="font-size: 1.5rem; padding: 1.2rem 3rem;">
-                    <span data-i18n="demo.startNow">🚀 Iniciar Teste Gratuito Agora</span>
-                </a>
-                <p style="margin-top: 1rem; opacity: 0.8;">
-                    <span data-i18n="demo.features">⏰ Configuração em 2 minutos | 📱 Use seu WhatsApp | 🐄🐃 Bovinos e Búfalos</span>
-                </p>
             </div>
         </div>
     </section>
@@ -971,26 +778,26 @@
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <h3 data-i18n="features.whatsapp">100% WhatsApp</h3>
-                    <p data-i18n="features.whatsappDesc">Interface que todos já conhecem. Zero treinamento necessário.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-sync-alt"></i>
-                    </div>
-                    <h3 data-i18n="features.integration">Integração Total</h3>
-                    <p data-i18n="features.integrationDesc">Conecta com ERP, Excel, sistemas contábeis e ferramentas existentes.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3 data-i18n="features.dashboards">Dashboards Inteligentes</h3>
-                    <p data-i18n="features.dashboardsDesc">Análises e relatórios que facilitam decisões e clareza nos resultados.</p>
+                    <h3 data-i18n="features.dashboards">Dashboards Profissionais</h3>
+                    <p data-i18n="features.dashboardsDesc">Análises completas, gráficos intuitivos e relatórios detalhados do seu rebanho.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3 data-i18n="features.whatsapp">Coleta via WhatsApp</h3>
+                    <p data-i18n="features.whatsappDesc">Seus vaqueiros enviam dados em linguagem natural direto do campo.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-csv"></i>
+                    </div>
+                    <h3 data-i18n="features.export">Exportação de Dados</h3>
+                    <p data-i18n="features.exportDesc">Baixe inventários completos em CSV ou PDF para seus registros.</p>
                 </div>
                 
                 <div class="feature-card">
@@ -998,7 +805,7 @@
                         🐃
                     </div>
                     <h3 data-i18n="features.animals">Bovinos e Búfalos</h3>
-                    <p data-i18n="features.animalsDesc">Único sistema WhatsApp com suporte completo para bubalinocultura.</p>
+                    <p data-i18n="features.animalsDesc">Sistema completo para gestão de bovinos e bubalinocultura.</p>
                 </div>
                 
                 <div class="feature-card">
@@ -1013,8 +820,8 @@
                     <div class="feature-icon">
                         <i class="fas fa-handshake"></i>
                     </div>
-                    <h3 data-i18n="features.support">Suporte Local</h3>
-                    <p data-i18n="features.supportDesc">Criado no Brasil, para a realidade do pecuarista brasileiro.</p>
+                    <h3 data-i18n="features.support">Suporte Especializado</h3>
+                    <p data-i18n="features.supportDesc">Criado para fazendeiros brasileiros, com suporte local dedicado.</p>
                 </div>
             </div>
         </div>
@@ -1026,11 +833,11 @@
             <div class="faq-grid">
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span data-i18n="faq.q1">ZapManejo substitui meu sistema atual?</span>
+                        <span data-i18n="faq.q1">Como funciona o ZapManejo?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p data-i18n="faq.a1"><strong>Não!</strong> ZapManejo é um complemento inteligente que captura dados via WhatsApp e integra com seus sistemas existentes. Você mantém seu ERP, planilhas e processos atuais.</p>
+                        <p data-i18n="faq.a1">O ZapManejo coleta dados do campo via WhatsApp e organiza tudo em dashboards profissionais. Seus vaqueiros enviam mensagens simples e o sistema processa automaticamente, gerando análises e relatórios completos.</p>
                     </div>
                 </div>
 
@@ -1040,17 +847,17 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p data-i18n="faq.a2"><strong>Sim!</strong> Somos o primeiro sistema WhatsApp com suporte completo para bubalinocultura. Incluímos as 4 principais raças criadas no Brasil: Murrah, Mediterrâneo, Jafarabadi e Carabao. Perfeito para produtores de leite, mozzarella e criadores em Marajó.</p>
+                        <p data-i18n="faq.a2"><strong>Sim!</strong> Temos suporte completo para bubalinocultura. Incluímos as 4 principais raças criadas no Brasil: Murrah, Mediterrâneo, Jafarabadi e Carabao. Perfeito para produtores de leite, mozzarella e criadores em Marajó.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span data-i18n="faq.q3">Como funciona a integração?</span>
+                        <span data-i18n="faq.q3">Como exporto meus dados?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p data-i18n="faq.a3">Oferecemos APIs REST, webhooks, exportação automática para Excel, conectores para os principais ERPs pecuários e integração personalizada. Os dados fluem automaticamente do WhatsApp para seus sistemas.</p>
+                        <p data-i18n="faq.a3">Você pode exportar todos seus dados em formato CSV ou PDF diretamente do dashboard. Baixe inventários completos, relatórios de produção, histórico de vacinações e muito mais com apenas um clique.</p>
                     </div>
                 </div>
 
@@ -1070,40 +877,8 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p data-i18n="faq.a5">O teste gratuito começa em 2 minutos. A implementação completa com integração aos seus sistemas leva de 1 a 5 dias, dependendo da complexidade. Oferecemos suporte total durante todo o processo.</p>
+                        <p data-i18n="faq.a5">A configuração inicial é rápida e simples. Em poucos minutos você já pode começar a receber dados via WhatsApp e visualizar tudo no dashboard. Oferecemos suporte completo durante todo o processo.</p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="roi-calculator" class="lead-capture">
-        <div class="container">
-            <h2 style="margin-bottom: 2rem;" data-i18n="roi.title">Calcule Seu Retorno - Bovinos e Búfalos</h2>
-            <div class="form-container">
-                <div class="roi-calculator">
-                    <h3 style="color: #2d5016; margin-bottom: 1rem;" data-i18n="roi.calculatorTitle">Calculadora de ROI</h3>
-                    <div class="form-group">
-                        <label for="cattle-count" data-i18n="roi.cattleCount">Número de cabeças (bovinos + búfalos):</label>
-                        <input type="number" id="cattle-count" placeholder="ex: 5000" onchange="calculateROI()">
-                    </div>
-                    <div class="form-group">
-                        <label for="avg-price" data-i18n="roi.avgPrice">Valor médio por cabeça (R$):</label>
-                        <input type="number" id="avg-price" placeholder="ex: 3000" onchange="calculateROI()" data-i18n-placeholder="roi.avgPricePlaceholder">
-                    </div>
-                    <div id="roi-result" class="roi-result hidden">
-                        <p id="roi-text"></p>
-                    </div>
-                </div>
-
-                <h3 style="margin: 2rem 0 1rem 0;" data-i18n="roi.freeTestTitle">Teste Grátis por 36 Horas</h3>
-                <div style="text-align: center;">
-                    <a href="https://oyster-app-zqs92.ondigitalocean.app/dashboard.html" class="cta-button" style="width: 100%; font-size: 1.2rem; padding: 1rem;">
-                        <span data-i18n="roi.startNow">🚀 Começar Teste Gratuito Agora</span>
-                    </a>
-                    <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.9;">
-                        <span data-i18n="roi.benefits">✅ Teste completo | 🐄🐃 Bovinos e Búfalos | 📱 Use seu WhatsApp</span>
-                    </p>
                 </div>
             </div>
         </div>
@@ -1111,13 +886,12 @@
 
     <footer>
         <div class="container">
-            <p data-i18n="footer.copyright">&copy; 2025 ZapManejo - Do campo ao dashboard: gestão completa direto do WhatsApp</p>
+            <p data-i18n="footer.copyright">&copy; 2025 ZapManejo - Dashboard Profissional para Gestão Pecuária</p>
             <p style="margin-top: 0.5rem; opacity: 0.8;">
-                <span data-i18n="footer.description">Suporte completo para bovinos e búfalos | Integra com seus sistemas existentes</span>
+                <span data-i18n="footer.description">Suporte completo para bovinos e búfalos | Exportação em CSV e PDF</span>
             </p>
             <p style="margin-top: 0.5rem;">
-                <a href="mailto:info@zapmanejo.com" style="color: #25D366;">info@zapmanejo.com</a> | 
-                <a href="https://oyster-app-zqs92.ondigitalocean.app/dashboard.html" style="color: #25D366;" data-i18n="footer.freeTest">Teste Grátis</a>
+                <a href="mailto:info@zapmanejo.com" style="color: #25D366;">info@zapmanejo.com</a>
             </p>
         </div>
     </footer>
@@ -1130,13 +904,13 @@
                 "nav.howItWorks": "Como Funciona",
                 "nav.buffaloes": "Búfalos",
                 "nav.faq": "FAQ",
-                "nav.freeTest": "🚀 Teste Grátis",
-                "hero.title": "Controle seu rebanho pelo WhatsApp sem substituir seu sistema atual",
-                "hero.subtitle": "Simples como uma mensagem, poderoso para integrar, analisar e decidir.",
-                "hero.valueTitle": "✅ Do campo ao dashboard: gestão completa direto do WhatsApp",
-                "hero.value1": "Integra com seu ERP ou planilhas existentes",
-                "hero.value2": "Dashboards inteligentes para melhor tomada de decisão",
-                "hero.value3": "Dados pelo WhatsApp, análise profissional em tempo real",
+                "nav.viewDashboard": "📊 Ver o Dashboard",
+                "hero.title": "Dashboard Profissional para Gestão Completa do seu Rebanho",
+                "hero.subtitle": "Coleta de dados simplificada via WhatsApp, análise profissional em dashboards inteligentes.",
+                "hero.valueTitle": "✅ Sistema Completo de Gestão Pecuária",
+                "hero.value1": "Dashboards profissionais com análises em tempo real",
+                "hero.value2": "Coleta de dados prática via WhatsApp",
+                "hero.value3": "Exportação para CSV e PDF para seus relatórios",
                 "hero.animalTitle": "🐄🐃 Gestão Completa para Bovinos e Búfalos",
                 "hero.cattleTitle": "🐄 Bovinos",
                 "hero.cattle1": "• Nelore",
@@ -1148,82 +922,60 @@
                 "hero.buffalo2": "• Mediterrâneo",
                 "hero.buffalo3": "• Jafarabadi",
                 "hero.buffalo4": "• Carabao",
-                "demo.message1": "\"Brinco 1234, bezerro macho, nelore, pasto norte\"",
-                "demo.message2": "\"BUF001, fêmea, murrah, 18 litros hoje\"",
-                "demo.autoIntegration": "Dados integrados automaticamente no seu sistema - Bovinos e Búfalos",
-                "cta.interactiveDemo": "🎯 Demonstração Interativa (36 horas grátis)",
-                "cta.calculateROI": "💰 Calcular ROI",
-                "positioning.title": "Como o ZapManejo Se Integra",
-                "positioning.noReplace": "❌ NÃO substitui seu sistema",
-                "positioning.noReplaceDesc": "Mantém seu ERP, planilhas e processos atuais funcionando normalmente.",
-                "positioning.complements": "✅ Complementa e Melhora",
-                "positioning.complementsDesc": "Captura dados via WhatsApp e integra perfeitamente com tudo que você já usa.",
-                "positioning.apis": "🔗 APIs e Conectores",
-                "positioning.apisDesc": "Integração automática com principais sistemas de gestão pecuária do mercado.",
+                "cta.accessDashboard": "📊 Acessar Dashboard Profissional",
+                "positioning.title": "Como o ZapManejo Funciona",
+                "positioning.collect": "📱 Coleta via WhatsApp",
+                "positioning.collectDesc": "Vaqueiros enviam dados do campo em linguagem simples pelo WhatsApp.",
+                "positioning.analyze": "📊 Dashboard Profissional",
+                "positioning.analyzeDesc": "Dados organizados automaticamente em dashboards com análises poderosas.",
+                "positioning.export": "📁 Exportação Flexível",
+                "positioning.exportDesc": "Baixe seus dados em CSV ou PDF para usar onde precisar.",
                 "buffalo.title": "🐃 Suporte Completo para Bubalinocultura",
-                "buffalo.description": "ZapManejo é o <strong>primeiro sistema WhatsApp</strong> com suporte completo para búfalos no Brasil. Perfeito para fazendas em Marajó, Amazônia e produtores de mozzarella.",
+                "buffalo.description": "Sistema completo com suporte especializado para búfalos. Perfeito para fazendas em Marajó, Amazônia e produtores de mozzarella.",
                 "buffalo.mediterraneanTitle": "Mediterrâneo",
                 "buffalo.murrah": "Alta produção leiteira<br>1.500-2.500 kg/lactação",
                 "buffalo.mediterranean": "Ideal para mozzarella<br>Excelente qualidade do leite",
                 "buffalo.jafarabadi": "Grande porte<br>Dupla aptidão",
                 "buffalo.carabao": "Adaptado ao clima<br>Resistente e versátil",
-                "buffalo.featuresTitle": "Funcionalidades Específicas para Búfalos:",
-                "buffalo.feature1": "✅ Controle de produção leiteira diária",
-                "buffalo.feature2": "✅ Rastreamento para certificação de mozzarella",
-                "buffalo.feature3": "✅ Gestão de búfalos em áreas alagadas",
-                "buffalo.feature4": "✅ Registro de cruzamentos Murrah x Mediterrâneo",
-                "demo.title": "Experimente Agora - 36 Horas Grátis",
-                "demo.description": "Teste com seus dados reais por 36 horas. Sem compromisso.",
-                "demo.startNow": "🚀 Iniciar Teste Gratuito Agora",
-                "demo.features": "⏰ Configuração em 2 minutos | 📱 Use seu WhatsApp | 🐄🐃 Bovinos e Búfalos",
                 "features.title": "Principais Funcionalidades",
-                "features.whatsapp": "100% WhatsApp",
-                "features.whatsappDesc": "Interface que todos já conhecem. Zero treinamento necessário.",
-                "features.integration": "Integração Total",
-                "features.integrationDesc": "Conecta com ERP, Excel, sistemas contábeis e ferramentas existentes.",
-                "features.dashboards": "Dashboards Inteligentes",
-                "features.dashboardsDesc": "Análises e relatórios que facilitam decisões e clareza nos resultados.",
+                "features.dashboards": "Dashboards Profissionais",
+                "features.dashboardsDesc": "Análises completas, gráficos intuitivos e relatórios detalhados do seu rebanho.",
+                "features.whatsapp": "Coleta via WhatsApp",
+                "features.whatsappDesc": "Seus vaqueiros enviam dados em linguagem natural direto do campo.",
+                "features.export": "Exportação de Dados",
+                "features.exportDesc": "Baixe inventários completos em CSV ou PDF para seus registros.",
                 "features.animals": "Bovinos e Búfalos",
-                "features.animalsDesc": "Único sistema WhatsApp com suporte completo para bubalinocultura.",
+                "features.animalsDesc": "Sistema completo para gestão de bovinos e bubalinocultura.",
                 "features.weather": "Dados Meteorológicos",
                 "features.weatherDesc": "Informações climáticas integradas para melhor planejamento.",
-                "features.support": "Suporte Local",
-                "features.supportDesc": "Criado no Brasil, para a realidade do pecuarista brasileiro.",
+                "features.support": "Suporte Especializado",
+                "features.supportDesc": "Criado para fazendeiros brasileiros, com suporte local dedicado.",
                 "faq.title": "Perguntas Frequentes",
-                "faq.q1": "ZapManejo substitui meu sistema atual?",
-                "faq.a1": "<strong>Não!</strong> ZapManejo é um complemento inteligente que captura dados via WhatsApp e integra com seus sistemas existentes. Você mantém seu ERP, planilhas e processos atuais.",
+                "faq.q1": "Como funciona o ZapManejo?",
+                "faq.a1": "O ZapManejo coleta dados do campo via WhatsApp e organiza tudo em dashboards profissionais. Seus vaqueiros enviam mensagens simples e o sistema processa automaticamente, gerando análises e relatórios completos.",
                 "faq.q2": "Funciona para búfalos também?",
-                "faq.a2": "<strong>Sim!</strong> Somos o primeiro sistema WhatsApp com suporte completo para bubalinocultura. Incluímos as 4 principais raças criadas no Brasil: Murrah, Mediterrâneo, Jafarabadi e Carabao. Perfeito para produtores de leite, mozzarella e criadores em Marajó.",
-                "faq.q3": "Como funciona a integração?",
-                "faq.a3": "Oferecemos APIs REST, webhooks, exportação automática para Excel, conectores para os principais ERPs pecuários e integração personalizada. Os dados fluem automaticamente do WhatsApp para seus sistemas.",
+                "faq.a2": "<strong>Sim!</strong> Temos suporte completo para bubalinocultura. Incluímos as 4 principais raças criadas no Brasil: Murrah, Mediterrâneo, Jafarabadi e Carabao. Perfeito para produtores de leite, mozzarella e criadores em Marajó.",
+                "faq.q3": "Como exporto meus dados?",
+                "faq.a3": "Você pode exportar todos seus dados em formato CSV ou PDF diretamente do dashboard. Baixe inventários completos, relatórios de produção, histórico de vacinações e muito mais com apenas um clique.",
                 "faq.q4": "Precisa internet o tempo todo?",
                 "faq.a4": "Não. WhatsApp armazena mensagens offline e sincroniza quando volta a conexão. Perfeito para áreas rurais e regiões como a Amazônia com conectividade intermitente.",
                 "faq.q5": "Quanto tempo leva para implementar?",
-                "faq.a5": "O teste gratuito começa em 2 minutos. A implementação completa com integração aos seus sistemas leva de 1 a 5 dias, dependendo da complexidade. Oferecemos suporte total durante todo o processo.",
-                "roi.title": "Calcule Seu Retorno - Bovinos e Búfalos",
-                "roi.calculatorTitle": "Calculadora de ROI",
-                "roi.cattleCount": "Número de cabeças (bovinos + búfalos):",
-                "roi.avgPrice": "Valor médio por cabeça (R$):",
-                "roi.avgPricePlaceholder": "ex: 3000 (búfalos valem mais)",
-                "roi.freeTestTitle": "Teste Grátis por 36 Horas",
-                "roi.startNow": "🚀 Começar Teste Gratuito Agora",
-                "roi.benefits": "✅ Teste completo | 🐄🐃 Bovinos e Búfalos | 📱 Use seu WhatsApp",
-                "footer.copyright": "&copy; 2025 ZapManejo - Do campo ao dashboard: gestão completa direto do WhatsApp",
-                "footer.description": "Suporte completo para bovinos e búfalos | Integra com seus sistemas existentes",
-                "footer.freeTest": "Teste Grátis"
+                "faq.a5": "A configuração inicial é rápida e simples. Em poucos minutos você já pode começar a receber dados via WhatsApp e visualizar tudo no dashboard. Oferecemos suporte completo durante todo o processo.",
+                "footer.copyright": "&copy; 2025 ZapManejo - Dashboard Profissional para Gestão Pecuária",
+                "footer.description": "Suporte completo para bovinos e búfalos | Exportação em CSV e PDF"
             },
             en: {
                 "nav.features": "Features",
                 "nav.howItWorks": "How It Works",
                 "nav.buffaloes": "Buffaloes",
                 "nav.faq": "FAQ",
-                "nav.freeTest": "🚀 Free Trial",
-                "hero.title": "Control your herd via WhatsApp without replacing your current system",
-                "hero.subtitle": "Simple as a message, powerful for integration, analysis, and decision-making.",
-                "hero.valueTitle": "✅ From field to dashboard: complete management via WhatsApp",
-                "hero.value1": "Integrates with your existing ERP or spreadsheets",
-                "hero.value2": "Smart dashboards for better decision making",
-                "hero.value3": "WhatsApp data entry, professional real-time analysis",
+                "nav.viewDashboard": "📊 View Dashboard",
+                "hero.title": "Professional Dashboard for Complete Herd Management",
+                "hero.subtitle": "Simplified data collection via WhatsApp, professional analysis in smart dashboards.",
+                "hero.valueTitle": "✅ Complete Livestock Management System",
+                "hero.value1": "Professional dashboards with real-time analytics",
+                "hero.value2": "Practical data collection via WhatsApp",
+                "hero.value3": "Export to CSV and PDF for your reports",
                 "hero.animalTitle": "🐄🐃 Complete Management for Cattle and Buffaloes",
                 "hero.cattleTitle": "🐄 Cattle",
                 "hero.cattle1": "• Nelore",
@@ -1235,82 +987,60 @@
                 "hero.buffalo2": "• Mediterranean",
                 "hero.buffalo3": "• Jafarabadi",
                 "hero.buffalo4": "• Carabao",
-                "demo.message1": "\"Tag 1234, male calf, nelore, north pasture\"",
-                "demo.message2": "\"BUF001, female, murrah, 18 liters today\"",
-                "demo.autoIntegration": "Data automatically integrated into your system - Cattle and Buffaloes",
-                "cta.interactiveDemo": "🎯 Interactive Demo (36 hours free)",
-                "cta.calculateROI": "💰 Calculate ROI",
-                "positioning.title": "How ZapManejo Integrates",
-                "positioning.noReplace": "❌ Does NOT replace your system",
-                "positioning.noReplaceDesc": "Keeps your ERP, spreadsheets, and current processes running normally.",
-                "positioning.complements": "✅ Complements and Improves",
-                "positioning.complementsDesc": "Captures data via WhatsApp and integrates perfectly with everything you already use.",
-                "positioning.apis": "🔗 APIs and Connectors",
-                "positioning.apisDesc": "Automatic integration with major livestock management systems.",
-                "buffalo.title": "🐃 Complete Support for Buffalo Farming",
-                "buffalo.description": "ZapManejo is the <strong>first WhatsApp system</strong> with complete buffalo support in Brazil. Perfect for farms in Marajó, Amazon, and mozzarella producers.",
+                "cta.accessDashboard": "📊 Access Professional Dashboard",
+                "positioning.title": "How ZapManejo Works",
+                "positioning.collect": "📱 WhatsApp Collection",
+                "positioning.collectDesc": "Cowboys send field data in simple language via WhatsApp.",
+                "positioning.analyze": "📊 Professional Dashboard",
+                "positioning.analyzeDesc": "Data automatically organized in dashboards with powerful analytics.",
+                "positioning.export": "📁 Flexible Export",
+                "positioning.exportDesc": "Download your data in CSV or PDF to use wherever you need.",
+                "buffalo.title": "🐃 Complete Buffalo Farming Support",
+                "buffalo.description": "Complete system with specialized buffalo support. Perfect for farms in Marajó, Amazon, and mozzarella producers.",
                 "buffalo.mediterraneanTitle": "Mediterranean",
                 "buffalo.murrah": "High milk production<br>1,500-2,500 kg/lactation",
                 "buffalo.mediterranean": "Ideal for mozzarella<br>Excellent milk quality",
                 "buffalo.jafarabadi": "Large size<br>Dual purpose",
                 "buffalo.carabao": "Climate adapted<br>Resistant and versatile",
-                "buffalo.featuresTitle": "Specific Features for Buffaloes:",
-                "buffalo.feature1": "✅ Daily milk production control",
-                "buffalo.feature2": "✅ Tracking for mozzarella certification",
-                "buffalo.feature3": "✅ Management of buffaloes in flooded areas",
-                "buffalo.feature4": "✅ Murrah x Mediterranean crossbreeding records",
-                "demo.title": "Try Now - 36 Hours Free",
-                "demo.description": "Test with your real data for 36 hours. No commitment.",
-                "demo.startNow": "🚀 Start Free Trial Now",
-                "demo.features": "⏰ 2-minute setup | 📱 Use your WhatsApp | 🐄🐃 Cattle and Buffaloes",
                 "features.title": "Main Features",
-                "features.whatsapp": "100% WhatsApp",
-                "features.whatsappDesc": "Interface everyone already knows. Zero training required.",
-                "features.integration": "Total Integration",
-                "features.integrationDesc": "Connects with ERP, Excel, accounting systems, and existing tools.",
-                "features.dashboards": "Smart Dashboards",
-                "features.dashboardsDesc": "Analytics and reports that facilitate decisions and clarity in results.",
+                "features.dashboards": "Professional Dashboards",
+                "features.dashboardsDesc": "Complete analytics, intuitive charts, and detailed reports of your herd.",
+                "features.whatsapp": "WhatsApp Collection",
+                "features.whatsappDesc": "Your cowboys send data in natural language directly from the field.",
+                "features.export": "Data Export",
+                "features.exportDesc": "Download complete inventories in CSV or PDF for your records.",
                 "features.animals": "Cattle and Buffaloes",
-                "features.animalsDesc": "The only WhatsApp system with complete buffalo farming support.",
+                "features.animalsDesc": "Complete system for cattle and buffalo management.",
                 "features.weather": "Weather Data",
                 "features.weatherDesc": "Integrated climate information for better planning.",
-                "features.support": "Local Support",
-                "features.supportDesc": "Created in Brazil, for the Brazilian rancher's reality.",
+                "features.support": "Specialized Support",
+                "features.supportDesc": "Created for Brazilian farmers, with dedicated local support.",
                 "faq.title": "Frequently Asked Questions",
-                "faq.q1": "Does ZapManejo replace my current system?",
-                "faq.a1": "<strong>No!</strong> ZapManejo is a smart complement that captures data via WhatsApp and integrates with your existing systems. You keep your ERP, spreadsheets, and current processes.",
+                "faq.q1": "How does ZapManejo work?",
+                "faq.a1": "ZapManejo collects field data via WhatsApp and organizes everything in professional dashboards. Your cowboys send simple messages and the system automatically processes, generating complete analytics and reports.",
                 "faq.q2": "Does it work for buffaloes too?",
-                "faq.a2": "<strong>Yes!</strong> We are the first WhatsApp system with complete buffalo farming support. We include the 4 main breeds raised in Brazil: Murrah, Mediterranean, Jafarabadi, and Carabao. Perfect for milk producers, mozzarella makers, and breeders in Marajó.",
-                "faq.q3": "How does integration work?",
-                "faq.a3": "We offer REST APIs, webhooks, automatic Excel export, connectors for major livestock ERPs, and custom integration. Data flows automatically from WhatsApp to your systems.",
-                "faq.q4": "Does it need internet all the time?",
+                "faq.a2": "<strong>Yes!</strong> We have complete buffalo farming support. We include the 4 main breeds raised in Brazil: Murrah, Mediterranean, Jafarabadi, and Carabao. Perfect for milk producers, mozzarella makers, and breeders in Marajó.",
+                "faq.q3": "How do I export my data?",
+                "faq.a3": "You can export all your data in CSV or PDF format directly from the dashboard. Download complete inventories, production reports, vaccination history, and much more with just one click.",
+                "faq.q4": "Do I need internet all the time?",
                 "faq.a4": "No. WhatsApp stores messages offline and syncs when connection returns. Perfect for rural areas and regions like the Amazon with intermittent connectivity.",
                 "faq.q5": "How long does implementation take?",
-                "faq.a5": "The free trial starts in 2 minutes. Complete implementation with integration to your systems takes 1 to 5 days, depending on complexity. We offer full support throughout the process.",
-                "roi.title": "Calculate Your Return - Cattle and Buffaloes",
-                "roi.calculatorTitle": "ROI Calculator",
-                "roi.cattleCount": "Number of heads (cattle + buffaloes):",
-                "roi.avgPrice": "Average value per head ($):",
-                "roi.avgPricePlaceholder": "e.g., 3000 (buffaloes worth more)",
-                "roi.freeTestTitle": "Free Trial for 36 Hours",
-                "roi.startNow": "🚀 Start Free Trial Now",
-                "roi.benefits": "✅ Complete trial | 🐄🐃 Cattle and Buffaloes | 📱 Use your WhatsApp",
-                "footer.copyright": "&copy; 2025 ZapManejo - From field to dashboard: complete management via WhatsApp",
-                "footer.description": "Complete support for cattle and buffaloes | Integrates with your existing systems",
-                "footer.freeTest": "Free Trial"
+                "faq.a5": "Initial setup is quick and simple. In a few minutes you can start receiving data via WhatsApp and view everything on the dashboard. We offer complete support throughout the process.",
+                "footer.copyright": "&copy; 2025 ZapManejo - Professional Dashboard for Livestock Management",
+                "footer.description": "Complete support for cattle and buffaloes | Export in CSV and PDF"
             },
             es: {
                 "nav.features": "Funcionalidades",
                 "nav.howItWorks": "Cómo Funciona",
                 "nav.buffaloes": "Búfalos",
                 "nav.faq": "FAQ",
-                "nav.freeTest": "🚀 Prueba Gratis",
-                "hero.title": "Controla tu rebaño por WhatsApp sin reemplazar tu sistema actual",
-                "hero.subtitle": "Simple como un mensaje, poderoso para integrar, analizar y decidir.",
-                "hero.valueTitle": "✅ Del campo al dashboard: gestión completa desde WhatsApp",
-                "hero.value1": "Se integra con tu ERP o hojas de cálculo existentes",
-                "hero.value2": "Dashboards inteligentes para mejor toma de decisiones",
-                "hero.value3": "Datos por WhatsApp, análisis profesional en tiempo real",
+                "nav.viewDashboard": "📊 Ver el Panel",
+                "hero.title": "Panel Profesional para Gestión Completa de tu Rebaño",
+                "hero.subtitle": "Recolección de datos simplificada vía WhatsApp, análisis profesional en paneles inteligentes.",
+                "hero.valueTitle": "✅ Sistema Completo de Gestión Ganadera",
+                "hero.value1": "Paneles profesionales con análisis en tiempo real",
+                "hero.value2": "Recolección práctica de datos vía WhatsApp",
+                "hero.value3": "Exportación a CSV y PDF para tus informes",
                 "hero.animalTitle": "🐄🐃 Gestión Completa para Bovinos y Búfalos",
                 "hero.cattleTitle": "🐄 Bovinos",
                 "hero.cattle1": "• Nelore",
@@ -1322,69 +1052,47 @@
                 "hero.buffalo2": "• Mediterráneo",
                 "hero.buffalo3": "• Jafarabadi",
                 "hero.buffalo4": "• Carabao",
-                "demo.message1": "\"Arete 1234, ternero macho, nelore, potrero norte\"",
-                "demo.message2": "\"BUF001, hembra, murrah, 18 litros hoy\"",
-                "demo.autoIntegration": "Datos integrados automáticamente en tu sistema - Bovinos y Búfalos",
-                "cta.interactiveDemo": "🎯 Demostración Interactiva (36 horas gratis)",
-                "cta.calculateROI": "💰 Calcular ROI",
-                "positioning.title": "Cómo Se Integra ZapManejo",
-                "positioning.noReplace": "❌ NO reemplaza tu sistema",
-                "positioning.noReplaceDesc": "Mantiene tu ERP, hojas de cálculo y procesos actuales funcionando normalmente.",
-                "positioning.complements": "✅ Complementa y Mejora",
-                "positioning.complementsDesc": "Captura datos vía WhatsApp e integra perfectamente con todo lo que ya usas.",
-                "positioning.apis": "🔗 APIs y Conectores",
-                "positioning.apisDesc": "Integración automática con principales sistemas de gestión ganadera del mercado.",
+                "cta.accessDashboard": "📊 Acceder al Panel Profesional",
+                "positioning.title": "Cómo Funciona ZapManejo",
+                "positioning.collect": "📱 Recolección vía WhatsApp",
+                "positioning.collectDesc": "Vaqueros envían datos del campo en lenguaje simple por WhatsApp.",
+                "positioning.analyze": "📊 Panel Profesional",
+                "positioning.analyzeDesc": "Datos organizados automáticamente en paneles con análisis poderosos.",
+                "positioning.export": "📁 Exportación Flexible",
+                "positioning.exportDesc": "Descarga tus datos en CSV o PDF para usar donde necesites.",
                 "buffalo.title": "🐃 Soporte Completo para Bubalinos",
-                "buffalo.description": "ZapManejo es el <strong>primer sistema WhatsApp</strong> con soporte completo para búfalos en Brasil. Perfecto para haciendas en Marajó, Amazonía y productores de mozzarella.",
+                "buffalo.description": "Sistema completo con soporte especializado para búfalos. Perfecto para haciendas en Marajó, Amazonía y productores de mozzarella.",
                 "buffalo.mediterraneanTitle": "Mediterráneo",
                 "buffalo.murrah": "Alta producción lechera<br>1.500-2.500 kg/lactación",
                 "buffalo.mediterranean": "Ideal para mozzarella<br>Excelente calidad de leche",
                 "buffalo.jafarabadi": "Gran porte<br>Doble propósito",
                 "buffalo.carabao": "Adaptado al clima<br>Resistente y versátil",
-                "buffalo.featuresTitle": "Funcionalidades Específicas para Búfalos:",
-                "buffalo.feature1": "✅ Control de producción lechera diaria",
-                "buffalo.feature2": "✅ Rastreo para certificación de mozzarella",
-                "buffalo.feature3": "✅ Gestión de búfalos en áreas inundadas",
-                "buffalo.feature4": "✅ Registro de cruces Murrah x Mediterráneo",
-                "demo.title": "Prueba Ahora - 36 Horas Gratis",
-                "demo.description": "Prueba con tus datos reales por 36 horas. Sin compromiso.",
-                "demo.startNow": "🚀 Iniciar Prueba Gratuita Ahora",
-                "demo.features": "⏰ Configuración en 2 minutos | 📱 Usa tu WhatsApp | 🐄🐃 Bovinos y Búfalos",
                 "features.title": "Principales Funcionalidades",
-                "features.whatsapp": "100% WhatsApp",
-                "features.whatsappDesc": "Interfaz que todos ya conocen. Cero entrenamiento necesario.",
-                "features.integration": "Integración Total",
-                "features.integrationDesc": "Conecta con ERP, Excel, sistemas contables y herramientas existentes.",
-                "features.dashboards": "Dashboards Inteligentes",
-                "features.dashboardsDesc": "Análisis e informes que facilitan decisiones y claridad en los resultados.",
+                "features.dashboards": "Paneles Profesionales",
+                "features.dashboardsDesc": "Análisis completos, gráficos intuitivos e informes detallados de tu rebaño.",
+                "features.whatsapp": "Recolección vía WhatsApp",
+                "features.whatsappDesc": "Tus vaqueros envían datos en lenguaje natural directo del campo.",
+                "features.export": "Exportación de Datos",
+                "features.exportDesc": "Descarga inventarios completos en CSV o PDF para tus registros.",
                 "features.animals": "Bovinos y Búfalos",
-                "features.animalsDesc": "Único sistema WhatsApp con soporte completo para bubalinocultura.",
+                "features.animalsDesc": "Sistema completo para gestión de bovinos y bubalinocultura.",
                 "features.weather": "Datos Meteorológicos",
                 "features.weatherDesc": "Información climática integrada para mejor planificación.",
-                "features.support": "Soporte Local",
-                "features.supportDesc": "Creado en Brasil, para la realidad del ganadero brasileño.",
+                "features.support": "Soporte Especializado",
+                "features.supportDesc": "Creado para ganaderos brasileños, con soporte local dedicado.",
                 "faq.title": "Preguntas Frecuentes",
-                "faq.q1": "¿ZapManejo reemplaza mi sistema actual?",
-                "faq.a1": "<strong>¡No!</strong> ZapManejo es un complemento inteligente que captura datos vía WhatsApp e integra con tus sistemas existentes. Mantienes tu ERP, hojas de cálculo y procesos actuales.",
+                "faq.q1": "¿Cómo funciona ZapManejo?",
+                "faq.a1": "ZapManejo recolecta datos del campo vía WhatsApp y organiza todo en paneles profesionales. Tus vaqueros envían mensajes simples y el sistema procesa automáticamente, generando análisis e informes completos.",
                 "faq.q2": "¿Funciona para búfalos también?",
-                "faq.a2": "<strong>¡Sí!</strong> Somos el primer sistema WhatsApp con soporte completo para bubalinocultura. Incluimos las 4 principales razas criadas en Brasil: Murrah, Mediterráneo, Jafarabadi y Carabao. Perfecto para productores de leche, mozzarella y criadores en Marajó.",
-                "faq.q3": "¿Cómo funciona la integración?",
-                "faq.a3": "Ofrecemos APIs REST, webhooks, exportación automática a Excel, conectores para los principales ERPs ganaderos e integración personalizada. Los datos fluyen automáticamente de WhatsApp a tus sistemas.",
+                "faq.a2": "<strong>¡Sí!</strong> Tenemos soporte completo para bubalinocultura. Incluimos las 4 principales razas criadas en Brasil: Murrah, Mediterráneo, Jafarabadi y Carabao. Perfecto para productores de leche, mozzarella y criadores en Marajó.",
+                "faq.q3": "¿Cómo exporto mis datos?",
+                "faq.a3": "Puedes exportar todos tus datos en formato CSV o PDF directamente desde el panel. Descarga inventarios completos, informes de producción, historial de vacunaciones y mucho más con solo un clic.",
                 "faq.q4": "¿Necesita internet todo el tiempo?",
                 "faq.a4": "No. WhatsApp almacena mensajes offline y sincroniza cuando vuelve la conexión. Perfecto para áreas rurales y regiones como la Amazonía con conectividad intermitente.",
                 "faq.q5": "¿Cuánto tiempo lleva implementar?",
-                "faq.a5": "La prueba gratuita comienza en 2 minutos. La implementación completa con integración a tus sistemas lleva de 1 a 5 días, dependiendo de la complejidad. Ofrecemos soporte total durante todo el proceso.",
-                "roi.title": "Calcula Tu Retorno - Bovinos y Búfalos",
-                "roi.calculatorTitle": "Calculadora de ROI",
-                "roi.cattleCount": "Número de cabezas (bovinos + búfalos):",
-                "roi.avgPrice": "Valor promedio por cabeza ($):",
-                "roi.avgPricePlaceholder": "ej: 3000 (búfalos valen más)",
-                "roi.freeTestTitle": "Prueba Gratis por 36 Horas",
-                "roi.startNow": "🚀 Comenzar Prueba Gratuita Ahora",
-                "roi.benefits": "✅ Prueba completa | 🐄🐃 Bovinos y Búfalos | 📱 Usa tu WhatsApp",
-                "footer.copyright": "&copy; 2025 ZapManejo - Del campo al dashboard: gestión completa desde WhatsApp",
-                "footer.description": "Soporte completo para bovinos y búfalos | Se integra con tus sistemas existentes",
-                "footer.freeTest": "Prueba Gratis"
+                "faq.a5": "La configuración inicial es rápida y simple. En pocos minutos puedes empezar a recibir datos vía WhatsApp y visualizar todo en el panel. Ofrecemos soporte completo durante todo el proceso.",
+                "footer.copyright": "&copy; 2025 ZapManejo - Panel Profesional para Gestión Ganadera",
+                "footer.description": "Soporte completo para bovinos y búfalos | Exportación en CSV y PDF"
             }
         };
 
@@ -1402,27 +1110,8 @@
                 }
             });
             
-            // Update placeholders
-            document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
-                const key = element.getAttribute('data-i18n-placeholder');
-                if (translations[currentLang][key]) {
-                    element.placeholder = translations[currentLang][key];
-                }
-            });
-            
             // Update HTML lang attribute
             document.documentElement.lang = currentLang === 'pt' ? 'pt-BR' : currentLang === 'es' ? 'es' : 'en';
-            
-            // Update currency symbol in ROI calculator
-            updateROICurrency();
-        }
-
-        function updateROICurrency() {
-            const currencySymbol = currentLang === 'pt' ? 'R$' : '$';
-            const avgPriceLabel = document.querySelector('label[for="avg-price"]');
-            if (avgPriceLabel && translations[currentLang]["roi.avgPrice"]) {
-                avgPriceLabel.innerHTML = translations[currentLang]["roi.avgPrice"].replace('R$', currencySymbol);
-            }
         }
 
         function toggleFAQ(element) {
@@ -1433,52 +1122,40 @@
             icon.style.transform = answer.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
         }
 
-        function calculateROI() {
-            const cattleCount = document.getElementById('cattle-count').value;
-            const avgPrice = document.getElementById('avg-price').value;
-            
-            if (cattleCount && avgPrice) {
-                const totalValue = cattleCount * avgPrice;
-                const annualSoftwareCost = 2988; // R$249/month * 12
-                const preventableLossPercent = 0.005;
-                const preventableLoss = totalValue * preventableLossPercent;
-                const roi = ((preventableLoss - annualSoftwareCost) / annualSoftwareCost) * 100;
-                
-                const resultElement = document.getElementById('roi-result');
-                const textElement = document.getElementById('roi-text');
-                
-                const currencySymbol = currentLang === 'pt' ? 'R$' : '$';
-                
-                if (currentLang === 'pt') {
-                    textElement.innerHTML = 
-                        '<strong>Seu Rebanho:</strong> ' + parseInt(cattleCount).toLocaleString() + ' cabeças<br>' +
-                        '<strong>Valor Total:</strong> R$ ' + totalValue.toLocaleString() + '<br>' +
-                        '<strong>Economia Estimada:</strong> R$ ' + Math.round(preventableLoss).toLocaleString() + '/ano<br>' +
-                        '<strong>Custo ZapManejo:</strong> R$ 2.988/ano<br>' +
-                        '<strong>ROI:</strong> ' + Math.round(roi) + '% no primeiro ano<br>' +
-                        '<small>*Búfalos geralmente têm ROI maior devido ao maior valor unitário</small>';
-                } else if (currentLang === 'en') {
-                    textElement.innerHTML = 
-                        '<strong>Your Herd:</strong> ' + parseInt(cattleCount).toLocaleString() + ' heads<br>' +
-                        '<strong>Total Value:</strong> $ ' + totalValue.toLocaleString() + '<br>' +
-                        '<strong>Estimated Savings:</strong> $ ' + Math.round(preventableLoss).toLocaleString() + '/year<br>' +
-                        '<strong>ZapManejo Cost:</strong> $ 2,988/year<br>' +
-                        '<strong>ROI:</strong> ' + Math.round(roi) + '% in the first year<br>' +
-                        '<small>*Buffaloes typically have higher ROI due to higher unit value</small>';
-                } else {
-                    textElement.innerHTML = 
-                        '<strong>Tu Rebaño:</strong> ' + parseInt(cattleCount).toLocaleString() + ' cabezas<br>' +
-                        '<strong>Valor Total:</strong> $ ' + totalValue.toLocaleString() + '<br>' +
-                        '<strong>Ahorro Estimado:</strong> $ ' + Math.round(preventableLoss).toLocaleString() + '/año<br>' +
-                        '<strong>Costo ZapManejo:</strong> $ 2.988/año<br>' +
-                        '<strong>ROI:</strong> ' + Math.round(roi) + '% en el primer año<br>' +
-                        '<small>*Los búfalos generalmente tienen mayor ROI debido al mayor valor unitario</small>';
-                }
-                
-                resultElement.classList.remove('hidden');
-            }
+        function showModal(event) {
+            event.preventDefault();
+            document.getElementById('infoModal').classList.add('active');
         }
 
+        function closeModal() {
+            document.getElementById('infoModal').classList.remove('active');
+        }
+
+        // Handle form submission
+        document.getElementById('infoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = {
+                name: document.getElementById('userName').value,
+                email: document.getElementById('userEmail').value,
+                phone: document.getElementById('userPhone').value,
+                farmName: document.getElementById('farmName').value,
+                state: document.getElementById('userState').value,
+                cattleCount: document.getElementById('cattleCount').value || 'Não informado'
+            };
+            
+            // Store in localStorage (optional)
+            localStorage.setItem('zapmanejo_user', JSON.stringify(formData));
+            
+            // Send to backend (when ready)
+            // fetch('/api/register-demo', { method: 'POST', body: JSON.stringify(formData) })
+            
+            // Redirect to dashboard
+            window.location.href = 'https://oyster-app-zqs92.ondigitalocean.app/dashboard.html';
+        });
+
+        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
