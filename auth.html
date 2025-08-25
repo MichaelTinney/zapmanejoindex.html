@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZapManejo Auth</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="login.css"> <!-- Assume this will be created -->
+</head>
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h2 class="text-center">Login</h2>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Login</button>
+        </form>
+        <hr>
+        <h2 class="text-center">Register</h2>
+        <form id="register-form">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" required>
+          </div>
+          <div class="form-group">
+            <label for="reg-email">Email</label>
+            <input type="email" class="form-control" id="reg-email" required>
+          </div>
+          <div class="form-group">
+            <label for="reg-password">Password</label>
+            <input type="password" class="form-control" id="reg-password" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="text" class="form-control" id="phone">
+          </div>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name">
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Register</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+    $('#login-form').on('submit', function(e) {
+      e.preventDefault();
+      const data = {
+        email: $('#email').val(),
+        password: $('#password').val(),
+      };
+      $.post('/api/login', data, function(res) {
+        localStorage.setItem('jwt', res.token);
+        window.location.href = '/dashboard_pro.html';
+      }).fail(function() {
+        alert('Login failed');
+      });
+    });
+
+    $('#register-form').on('submit', function(e) {
+      e.preventDefault();
+      const data = {
+        username: $('#username').val(),
+        email: $('#reg-email').val(),
+        password: $('#reg-password').val(),
+        phoneNumber: $('#phone').val(),
+        name: $('#name').val(),
+      };
+      $.post('/api/register', data, function() {
+        alert('Registered successfully. Please login.');
+      }).fail(function() {
+        alert('Registration failed');
+      });
+    });
+  </script>
+</body>
+</html>
