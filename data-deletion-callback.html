@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Data Deletion Confirmation</title>
+  <script>
+    // This runs when Meta calls this URL
+    document.addEventListener('DOMContentLoaded', function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const signedRequest = urlParams.get('signed_request');
+      
+      if (signedRequest) {
+        // In a real app, you'd parse this and delete user data
+        console.log("Data deletion request received:", signedRequest);
+        
+        // Simulate processing
+        setTimeout(() => {
+          // Meta requires a confirmation URL
+          const confirmationUrl = "https://zapmanejo.com/data-deletion-confirmation.html";
+          window.location.href = confirmationUrl + "?status=success&request=" + encodeURIComponent(signedRequest);
+        }, 1000);
+      } else {
+        document.body.innerHTML = "<h1>Invalid Request</h1>";
+      }
+    });
+  </script>
+</head>
+<body>
+  <h1>Processing Data Deletion Request...</h1>
+  <p>Please wait while we securely delete your data.</p>
+</body>
+</html>
